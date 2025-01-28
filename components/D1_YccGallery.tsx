@@ -1,19 +1,46 @@
-import React from 'react';
-import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
 
 import styles from '@/styles/styles';
-import YccCategory from '@/paths/getYccCategories';
+import YccCatPromise from '@/paths/getYccCategories'; // Import the Promise
+
+interface YccCategory {
+    id: string;
+    title: string;
+    cover: string;
+}
 
 const YccGallery = () => {
-    const handleItemPress = (item: { id: string; title: string; cover: string }) => {
+    const [yccCategories, setYccCategories] = useState<YccCategory[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        // Fetch the YccCat data when the component mounts
+        const fetchData = async () => {
+            try {
+                const data = await YccCatPromise; // Wait for the Promise to resolve
+                setYccCategories(data); // Update state with the fetched data
+            } catch (err) {
+                setError('Failed to load categories.'); // Handle errors
+                console.error(err);
+            } finally {
+                setLoading(false); // Stop loading
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    const handleItemPress = (item: YccCategory) => {
         router.push({
             pathname: '/ycc',
             params: { itemid: item.id },
         });
     };
 
-    const renderItem = ({ item }: { item: { id: string; title: string; cover: string } }) => (
+    const renderItem = ({ item }: { item: YccCategory }) => (
         <TouchableOpacity
             style={styles.galleryItemContainer}
             onPress={() => handleItemPress(item)}
@@ -25,14 +52,27 @@ const YccGallery = () => {
         </TouchableOpacity>
     );
 
+    if (loading) {
+        return (
+            <View style={styles.loadingContainer}>
+                <ActivityIndicator size="large" color="#0000ff" />
+                <Text>Loading...</Text>
+            </View>
+        );
+    }
+
+    if (error) {
+        return (
+            <View style={styles.errorContainer}>
+                <Text style={styles.errorText}>{error}</Text>
+            </View>
+        );
+    }
+
     return (
         <View style={styles.galleryContainer}>
             <FlatList
-                data={YccCategory.map((item) => ({
-                    id: item.id,
-                    title: item.title,
-                    cover: item.cover,
-                }))}
+                data={yccCategories}
                 keyExtractor={(item) => item.id}
                 renderItem={renderItem}
                 numColumns={2}

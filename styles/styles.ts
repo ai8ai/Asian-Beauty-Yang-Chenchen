@@ -134,6 +134,20 @@ const styles = StyleSheet.create({
         color: '#333',
         textAlign: 'center',
     },
+    loadingContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    errorContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    errorText: {
+        color: 'red',
+        fontSize: 18,
+    },
 
 });
 
