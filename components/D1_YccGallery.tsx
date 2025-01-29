@@ -34,6 +34,8 @@ const YccGallery = () => {
     }, []);
 
     const handleItemPress = (item: YccCategory) => {
+        console.log(item.id)
+        console.log(item.cover)
         router.push({
             pathname: '/ycc',
             params: { itemid: item.id },
