@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     galleryItemImage: {
-        height: '90%',
+        height: '85%',
         width: '100%',
         aspectRatio: 10 / 16,
         borderRadius: 8,
@@ -148,7 +148,14 @@ const styles = StyleSheet.create({
         color: 'red',
         fontSize: 18,
     },
-
+    screenContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    text: {
+        fontSize: 20,
+    },
 });
 
 export default styles;

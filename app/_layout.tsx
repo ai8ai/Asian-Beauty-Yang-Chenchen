@@ -1,18 +1,21 @@
-import React from 'react';
+// _layout.tsx
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Drawer } from 'expo-router/drawer';
 
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
+export default function Layout() {
+    // const hiddenScreens = ["category/[id]", "settings", "D5_Rate5Star"];
 
-
-export default function RootLayout() {
     return (
-        <>
-            <Stack>
-                <Stack.Screen name="index" options={{ headerShown: false, }} />
-                <Stack.Screen name="about" options={{ headerShown: false }} />
-                <Stack.Screen name="ycc" options={{ headerShown: false }} />
-            </Stack>
-            <StatusBar style="light" translucent />
-        </>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+            <Drawer />
+        </GestureHandlerRootView>
     );
 }
+
+            {/* screenOptions={({ route }) => ({
+                drawerItemStyle: hiddenScreens.includes(route.name) ? { display: "none" } : {},
+            })}>
+
+                <Drawer.Screen name="index" options={{ drawerLabel: 'Home', title: 'overview', }} />
+                <Drawer.Screen name="profile" options={{ drawerLabel: 'Profile', title: 'profile1', }} />
+            </Drawer> */}

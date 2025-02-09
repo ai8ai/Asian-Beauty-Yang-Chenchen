@@ -1,25 +1,85 @@
-import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+// index.tsx
+import React, { useEffect, useState } from 'react';
+import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 
-import YccGallery  from '@/components/D1_YccGallery';
-import LocalGallery  from '@/components/D2_LocalGallery';
-import RateTheApp from '@/components/D5_Rate5Star';
+import { router } from 'expo-router';  // To navigate between screens
 
-const Drawer = createDrawerNavigator();
+import styles from '@/styles/styles';
+import TopCatPromise from '@/paths/getTopCate'; // Import the Promise
 
-export default function MainPage() {
-    return (
-        <Drawer.Navigator
-            screenOptions={{
-                drawerStyle: {
-                    width: 250,
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                },
-            }}
+import { TopCate } from '@/types'; 
+
+const HomeScreen = () => {
+    const [yccCategories, setYccCategories] = useState<TopCate[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        // Fetch the YccCat data when the component mounts
+        const fetchData = async () => {
+            try {
+                const data = await TopCatPromise; // Wait for the Promise to resolve
+                setYccCategories(data); // Update state with the fetched data
+            } catch (err) {
+                setError('Failed to load categories.'); // Handle errors
+                console.error(err);
+            } finally {
+                setLoading(false); // Stop loading
+            }
+        };
+
+        fetchData();
+    }, []);
+
+
+    const handleItemPress = (item: TopCate) => {
+        console.log(item.id)
+        router.push({
+            pathname: '/profile',
+            params: { itemid: item.id },
+        });
+    };
+
+    const renderItem = ({ item }: { item: TopCate }) => (
+        <TouchableOpacity
+            style={styles.galleryItemContainer}
+            onPress={() => handleItemPress(item)}
         >
-            <Drawer.Screen name="YccGallery"   component={YccGallery}   options={{ title: 'Asian Beauty Yome Sugar' }} />
-            <Drawer.Screen name="LocalGallery" component={LocalGallery}   options={{ title: 'My Local Gallery' }} />
-            <Drawer.Screen name="Rate"      component={RateTheApp}  options={{ title: '5 star!' }} />
-        </Drawer.Navigator>
+            <Image source={{ uri: item.cover }} style={styles.galleryItemImage} />
+            <Text style={styles.galleryItemTitle} numberOfLines={2}>
+                {item.title}
+            </Text>
+        </TouchableOpacity>
     );
-}
+
+    if (loading) {
+        return (
+            <View style={styles.loadingContainer}>
+                <ActivityIndicator size="large" color="#0000ff" />
+                <Text>Loading...</Text>
+            </View>
+        );
+    }
+
+    if (error) {
+        return (
+            <View style={styles.errorContainer}>
+                <Text style={styles.errorText}>{error}</Text>
+            </View>
+        );
+    }
+
+    return (
+        <View style={styles.galleryContainer}>
+            <FlatList
+                data={yccCategories}
+                keyExtractor={(item) => item.id}
+                renderItem={renderItem}
+                numColumns={2}
+                contentContainerStyle={styles.galleryGrid}
+            />
+        </View>
+    );
+};
+
+export default HomeScreen;
