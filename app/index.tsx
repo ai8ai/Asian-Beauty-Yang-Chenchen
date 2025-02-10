@@ -6,7 +6,7 @@ import { router } from 'expo-router';  // To navigate between screens
 import { Cate } from '@/types'; 
 import styles from '@/styles/styles';
 
-import {TopCatPromise} from '@/paths/getLocalCate'; // Import the Promise
+import {TopCatPromise} from '@/paths/getTopCate'; // Import the Promise
 
 
 const HomeScreen = () => {

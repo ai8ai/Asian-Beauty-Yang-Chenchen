@@ -5,12 +5,11 @@ import styles from '@/styles/styles';
 import { Cate } from '@/types';
 
 interface CategoryScreenProps {
-    title: string;
     fetchCategoryData: () => Promise<Cate[]>;
     onPressItem: (item: Cate) => void;
 }
 
-const CategoryScreen: React.FC<CategoryScreenProps> = ({ title, fetchCategoryData, onPressItem }) => {
+const CategoryScreen: React.FC<CategoryScreenProps> = ({ fetchCategoryData, onPressItem }) => {
     const [categories, setCategories] = useState<Cate[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
