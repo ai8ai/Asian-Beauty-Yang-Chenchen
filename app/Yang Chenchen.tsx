@@ -1,4 +1,3 @@
-// app/Cat1.tsx
 import React from 'react';
 import { router } from 'expo-router';
 
@@ -9,7 +8,7 @@ const YCC = () => {
     return (
         <CategoryScreen
             fetchCategoryData={() => getCategoryData('yccCate')}
-            onPressItem={(item) => router.push({ pathname: '/ycc', params: { itemid: item.id } })}
+            onPressItem={(item) => router.push({ pathname: '/detail/ycc', params: { itemid: item.id } })}
         />
     );
 };

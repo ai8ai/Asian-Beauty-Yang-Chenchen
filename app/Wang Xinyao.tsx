@@ -1,17 +1,16 @@
-// app/Cat1.tsx
 import React from 'react';
 import { router } from 'expo-router';
+
 import CategoryScreen from '@/components/CategoryScreen';
 import getCategoryData from '@/utils/getCategoryData';
 
-const YCC = () => {
+const WXY = () => {
     return (
         <CategoryScreen
-            title="Category YCC"
-            fetchCategoryData={() => getCategoryData('yccCate')}
-            onPressItem={(item) => router.push({ pathname: '/profile', params: { itemid: item.id } })}
+            fetchCategoryData={() => getCategoryData('wxyCate')}
+            onPressItem={(item) => router.push({ pathname: '/wxy', params: { itemid: item.id } })}
         />
     );
 };
 
-export default YCC;
+export default WXY;
