@@ -3,14 +3,14 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 
 import { router } from 'expo-router';  // To navigate between screens
-
+import { Cate } from '@/types'; 
 import styles from '@/styles/styles';
-import TopCatPromise from '@/paths/getTopCate'; // Import the Promise
 
-import { TopCate } from '@/types'; 
+import {TopCatPromise} from '@/paths/getLocalCate'; // Import the Promise
+
 
 const HomeScreen = () => {
-    const [yccCategories, setYccCategories] = useState<TopCate[]>([]);
+    const [yccCategories, setYccCategories] = useState<Cate[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
@@ -32,15 +32,26 @@ const HomeScreen = () => {
     }, []);
 
 
-    const handleItemPress = (item: TopCate) => {
+    const handleItemPress = (item: Cate) => {
         console.log(item.id)
+        const routeMap: Record<string, string> = {
+            "1": "/Yang Chenchen",
+            "2": "/Sun Yunzhu",
+            "3": "/Wang Xinyao",
+            "4": "/Vicky Kele",
+            "5": "/profile",
+            "6": "/Cheng Chengcheng",
+        };
+
+        const pathname = routeMap[item.id] || "/profile" as any;
+
         router.push({
-            pathname: '/profile',
+            pathname,
             params: { itemid: item.id },
         });
     };
 
-    const renderItem = ({ item }: { item: TopCate }) => (
+    const renderItem = ({ item }: { item: Cate }) => (
         <TouchableOpacity
             style={styles.galleryItemContainer}
             onPress={() => handleItemPress(item)}

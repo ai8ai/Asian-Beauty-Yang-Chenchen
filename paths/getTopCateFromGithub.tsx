@@ -1,8 +1,8 @@
-import { TopCate } from '@/types'; // Import the TopCate interface
+// getTopCate.tsx
+import { Cate } from '@/types'; // Import the TopCate interface
+let topCategories: Cate[] = []; // Rename the variable to avoid conflict
 
-let topCategories: TopCate[] = []; // Rename the variable to avoid conflict
-
-async function fetchTopCateCover(): Promise<TopCate[]> {
+async function fetchTopCateCover(): Promise<Cate[]> {
     try {
         const response = await fetch('https://raw.githubusercontent.com/AIdrescom/Asian-Beauty-Yang-Chenchen-Data/refs/heads/main/categoryList/ycccat.json');
 
