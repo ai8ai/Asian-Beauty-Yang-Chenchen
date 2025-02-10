@@ -1,6 +1,6 @@
 // utils/getCategoryData.ts
 import { Cate } from '@/types';
-import YccCatPromise from '@/paths/getYccCate';
+import YccCatPromise from '@/constants/Cat_YCC';
 
 const getCategoryData = async (category: string): Promise<Cate[]> => {
     switch (category) {

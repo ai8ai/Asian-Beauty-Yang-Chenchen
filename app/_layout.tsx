@@ -12,7 +12,6 @@ export default function Layout() {
                 <Drawer screenOptions={({ route }) => ({
                     drawerItemStyle: hiddenScreens.includes(route.name) ? { display: "none" } : {},
                 })}>
-                    {/* <Drawer.Screen name="ycc" options={{ headerShown: false }} /> */}
                     <Drawer.Screen name="index" options={{ drawerLabel: 'Home', title: 'Asian Beauty', }} />
                 </Drawer>
             </GestureHandlerRootView>
