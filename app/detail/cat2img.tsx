@@ -1,10 +1,13 @@
+// cat2img.tsx
 import React, { useEffect, useState } from 'react';
-import { useLocalSearchParams } from 'expo-router';
-import SlideshowYcc from '@/components/SlideshowOnline';
+import { useLocalSearchParams, useNavigation  } from 'expo-router';
+
+import Slideshow from '@/components/SlideshowOnline';
 import { getImagesByCategory } from '@/paths/getYccImagesPath';
 
-const YccScreen = () => {
+const Cat2Img = () => {
     const params = useLocalSearchParams();
+    const navigation = useNavigation();
     const yccCatId = Array.isArray(params.itemid) ? params.itemid[0] : params.itemid;
 
     const [images, setImages] = useState<string[]>([]);
@@ -18,7 +21,11 @@ const YccScreen = () => {
         fetchImages();
     }, [yccCatId]);
 
-    return <SlideshowYcc images={images} />;
+    useEffect(() => {
+        navigation.setOptions({ headerShown: false });
+    }, [navigation]);
+
+    return <Slideshow images={images} />;
 };
 
-export default YccScreen;
+export default Cat2Img;

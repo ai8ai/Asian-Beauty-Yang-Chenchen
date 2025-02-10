@@ -1,9 +1,8 @@
 // ycc.tsx
 import React, { useEffect, useState } from 'react';
 import { useLocalSearchParams, useNavigation  } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
 
-import SlideshowYcc from '@/components/SlideshowYcc';
+import SlideshowYcc from '@/components/SlideshowOnline';
 import { getImagesByCategory } from '@/paths/getYccImagesPath';
 
 const YccScreen = () => {

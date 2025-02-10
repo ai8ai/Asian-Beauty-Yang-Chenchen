@@ -6,11 +6,11 @@ import KeleCatPromise from '@/constants/Cat_KELE';
 
 const getCategoryData = async (category: string): Promise<Cate[]> => {
     switch (category) {
-        case 'yccCat':
+        case 'ycc_cat':
             return await YccCatPromise; // Replace with actual data fetching
-        case 'wxyCat':
+        case 'wxy_cat':
             return await WxyCatPromise; // Replace with another data source if needed
-        case 'keleCat':
+        case 'kele_cat':
             return await KeleCatPromise; // Replace with another data source if needed
         default:
             return await YccCatPromise;
