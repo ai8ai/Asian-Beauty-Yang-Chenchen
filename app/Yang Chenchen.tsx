@@ -9,7 +9,8 @@ const YCC = () => {
     return (
         <CategoryScreen
             fetchCategoryData={() => getCategoryData('yccCate')}
-            onPressItem={(item) => router.push({ pathname: '/profile', params: { itemid: item.id } })}
+            onPressItem={(item) => router.push({ pathname: '/ycc', params: { itemid: item.id } })}
+            
         />
     );
 };
