@@ -8,8 +8,8 @@ const KELE = () => {
     return (
         <CategoryScreen
             title="Category 1"
-            fetchCategoryData={() => getCategoryData('cat1')}
-            onPressItem={(item) => router.push({ pathname: '/profile', params: { itemid: item.id } })}
+            fetchCategoryData={() => getCategoryData('keleCat')}
+            onPressItem={(item) => router.push({ pathname: '/detail/kele', params: { itemid: item.id } })}
         />
     );
 };

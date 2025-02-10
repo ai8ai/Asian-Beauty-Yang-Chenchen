@@ -7,8 +7,8 @@ import getCategoryData from '@/utils/getCategoryData';
 const WXY = () => {
     return (
         <CategoryScreen
-            fetchCategoryData={() => getCategoryData('wxyCate')}
-            onPressItem={(item) => router.push({ pathname: '/wxy', params: { itemid: item.id } })}
+            fetchCategoryData={() => getCategoryData('wxyCat')}
+            onPressItem={(item) => router.push({ pathname: '/detail/wxy', params: { itemid: item.id } })}
         />
     );
 };

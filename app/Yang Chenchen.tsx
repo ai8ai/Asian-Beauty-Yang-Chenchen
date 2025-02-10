@@ -7,7 +7,7 @@ import getCategoryData from '@/utils/getCategoryData';
 const YCC = () => {
     return (
         <CategoryScreen
-            fetchCategoryData={() => getCategoryData('yccCate')}
+            fetchCategoryData={() => getCategoryData('yccCat')}
             onPressItem={(item) => router.push({ pathname: '/detail/ycc', params: { itemid: item.id } })}
         />
     );
