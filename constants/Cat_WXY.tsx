@@ -1,29 +1,26 @@
+// getTopCate.tsx
 import { Cate } from '@/types'; // Import the TopCate interface
 
-const wxyCovers: string[] = [
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_wxy/wxycat_1.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_wxy/wxycat_2.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_wxy/wxycat_3.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_wxy/wxycat_4.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_wxy/wxycat_5.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_wxy/wxycat_6.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_wxy/wxycat_7.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_wxy/wxycat_8.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_wxy/wxycat_9.jpg",
+const covers: string[] = [
+    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_1.jpg",
+    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_1.jpg",
+    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_10.jpg",
+    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_11.jpg",
+    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_12.jpg",
 ]
-const srcwxy = wxyCovers.sort(() => Math.random() - 0.5);
+const srcCover = covers.sort(() => Math.random() - 0.5);
 
-const wxyCate: Cate[] = [
-    { id: "1", title: "Amazing Start!", cover: srcwxy[0] },
-    { id: "2", title: "Explore the Beauty", cover: srcwxy[1] },
-    { id: "3", title: "Vibrant Colors", cover: srcwxy[2] },
-    { id: "4", title: "Bold & Confident", cover: srcwxy[3] },
-    { id: "5", title: "Artistic Vision", cover: srcwxy[4] },
-    { id: "6", title: "Nature's Essence", cover: srcwxy[5] },
-    { id: "7", title: "Graceful Elegance", cover: srcwxy[6] },
-    { id: "8", title: "Iconic Moments", cover: srcwxy[7] }
+const wxyCat: Cate[] = [
+    { id: "WXYcat01", title: "Office", cover: srcCover[0] },
+    { id: "WXYcat02", title: "Lace", cover: srcCover[1] },
+    { id: "WXYcat03", title: "Vibrant Colors", cover: srcCover[2] },
+    { id: "WXYcat04", title: "Bold & Confident", cover: srcCover[3] },
+    { id: "WXYcat05", title: "Artistic Vision", cover: srcCover[4] },
+    { id: "WXYcat06", title: "Nature's Essence", cover: srcCover[5] },
+    { id: "WXYcat07", title: "Graceful Elegance", cover: srcCover[6] },
+    { id: "WXYcat08", title: "Iconic Moments", cover: srcCover[7] }
 ];
 
-const wxyCatPromise = Promise.resolve(wxyCate);
+const WXYCatPromise = Promise.resolve(wxyCat);
 
-export default wxyCatPromise;
+export default WXYCatPromise;
