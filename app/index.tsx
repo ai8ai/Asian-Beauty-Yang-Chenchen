@@ -4,9 +4,9 @@ import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from
 
 import { router } from 'expo-router';  // To navigate between screens
 import { Cate } from '@/types'; 
-import styles from '@/styles/styles';
+import styles   from '@/styles/styles';
 
-import {TopCatPromise} from '@/paths/getTopCate'; // Import the Promise
+import {TopCatPromise} from '@/utils/getTopCate'; // Import the Promise
 
 
 const HomeScreen = () => {
@@ -39,11 +39,15 @@ const HomeScreen = () => {
             "2": "/Sun Yunzhu",
             "3": "/Wang Xinyao",
             "4": "/Vicky Kele",
-            "5": "/profile",
+            "5": "/Anran",
             "6": "/Cheng Chengcheng",
+            "7": "/Xu Lizhi Booty",
+            "8": "/Du Xiaoyu",
+            "9": "/Lin Xinglan",
+            "10": "/and More",
         };
 
-        const pathname = routeMap[item.id] || "/profile" as any;
+        const pathname = routeMap[item.id] || "/detail/profile" as any;
 
         router.push({
             pathname,
