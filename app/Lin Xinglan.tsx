@@ -7,7 +7,7 @@ import getCategoryData from '@/utils/getCategoryData';
 const YCC = () => {
     return (
         <CategoryScreen
-            fetchCategoryData={() => getCategoryData('ccc_cat')}
+            fetchCategoryData={() => getCategoryData('lxl_cat')}
             onPressItem={(item) => router.push({ pathname: '/detail/cat2img', params: { itemid: item.id } })}
         />
     );

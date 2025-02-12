@@ -41,7 +41,7 @@ const HomeScreen = () => {
             "4": "/Vicky Kele",
             "5": "/Anran",
             "6": "/Cheng Chengcheng",
-            "7": "/Xu Lizhi Booty",
+            "7": "/Xu Lizhi",
             "8": "/Du Xiaoyu",
             "9": "/Lin Xinglan",
             "10": "/and More",

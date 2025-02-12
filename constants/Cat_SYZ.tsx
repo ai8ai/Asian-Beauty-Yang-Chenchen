@@ -2,9 +2,16 @@
 import { Cate } from '@/types'; // Import the TopCate interface
 
 const yccCovers: string[] = [
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/ccred/ccred_1.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/ccred/ccred_10.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/ccred/ccred_13.jpg",
+    "https://ai8ai.github.io/abcat/syz/sc1.png",
+    "https://ai8ai.github.io/abcat/syz/sc2.jpg",
+    "https://ai8ai.github.io/abcat/syz/sc3.jpg",
+    "https://ai8ai.github.io/abcat/syz/sc4.jpg",
+    "https://ai8ai.github.io/abcat/syz/sc5.png",
+    "https://ai8ai.github.io/abcat/syz/sc6.JPG",
+    "https://ai8ai.github.io/abcat/syz/sc7.jpg",
+    "https://ai8ai.github.io/abcat/syz/sc8.jpg",
+    "https://ai8ai.github.io/abcat/syz/sc9.webp",
+    
 ]
 const srcYCC = yccCovers.sort(() => Math.random() - 0.5);
 

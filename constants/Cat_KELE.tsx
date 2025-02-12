@@ -1,15 +1,18 @@
 import { Cate } from '@/types'; // Import the TopCate interface
 
 const keleCovers: string[] = [
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_kele/kelecat_1.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_kele/kelecat_2.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_kele/kelecat_3.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_kele/kelecat_4.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_kele/kelecat_5.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_kele/kelecat_6.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_kele/kelecat_7.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_kele/kelecat_8.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat_kele/kelecat_9.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc1.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc2.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc3.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc4.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc5.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc6.PNG",
+    "https://ai8ai.github.io/abcat/kele/kc1.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc2.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc3.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc4.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc5.jpg",
+    "https://ai8ai.github.io/abcat/kele/kc6.PNG",
 ]
 const srckele = keleCovers.sort(() => Math.random() - 0.5);
 

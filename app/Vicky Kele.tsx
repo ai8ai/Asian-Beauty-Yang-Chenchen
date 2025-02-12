@@ -1,17 +1,16 @@
-// app/Cat1.tsx
 import React from 'react';
 import { router } from 'expo-router';
+
 import CategoryScreen from '@/components/CategoryScreen';
 import getCategoryData from '@/utils/getCategoryData';
 
-const KELE = () => {
+const YCC = () => {
     return (
         <CategoryScreen
-            title="Category 1"
-            fetchCategoryData={() => getCategoryData('keleCat')}
-            onPressItem={(item) => router.push({ pathname: '/detail/kele', params: { itemid: item.id } })}
+            fetchCategoryData={() => getCategoryData('kele_cat')}
+            onPressItem={(item) => router.push({ pathname: '/detail/cat2img', params: { itemid: item.id } })}
         />
     );
 };
 
-export default KELE;
+export default YCC;

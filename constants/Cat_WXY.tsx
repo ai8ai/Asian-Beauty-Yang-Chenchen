@@ -2,11 +2,14 @@
 import { Cate } from '@/types'; // Import the TopCate interface
 
 const covers: string[] = [
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_1.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_1.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_10.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_11.jpg",
-    "https://aidrescom.github.io/Asian-Beauty-Yang-Chenchen-Data/cat/ccat_12.jpg",
+    "https://ai8ai.github.io/abcat/wxy/wc1.jpg",
+    "https://ai8ai.github.io/abcat/wxy/wc2.jpg",
+    "https://ai8ai.github.io/abcat/wxy/wc3.jpg",
+    "https://ai8ai.github.io/abcat/wxy/wc4.jpg",
+    "https://ai8ai.github.io/abcat/wxy/wc5.jpg",
+    "https://ai8ai.github.io/abcat/wxy/wc6.jpg",
+    "https://ai8ai.github.io/abcat/wxy/wc7.jpg",
+    "https://ai8ai.github.io/abcat/wxy/wc8.jpg",
 ]
 const srcCover = covers.sort(() => Math.random() - 0.5);
 

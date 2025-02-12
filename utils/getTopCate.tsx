@@ -14,7 +14,6 @@ const yccTopCovers: string[] = [
 ];
 const srcTopYCC = yccTopCovers.sort(() => Math.random() - 0.5);
 
-
 const syzTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/syz/sc1.png",
     "https://ai8ai.github.io/abcat/syz/sc2.jpg",
@@ -28,7 +27,6 @@ const syzTopCovers: string[] = [
 ];
 const syzTopYCC = syzTopCovers.sort(() => Math.random() - 0.5);
 
-
 const wxyTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/wxy/wc1.jpg",
     "https://ai8ai.github.io/abcat/wxy/wc2.jpg",
@@ -41,7 +39,6 @@ const wxyTopCovers: string[] = [
 ];
 const wxyTopYCC = wxyTopCovers.sort(() => Math.random() - 0.5);
 
-
 const keleTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/kele/kc1.jpg",
     "https://ai8ai.github.io/abcat/kele/kc2.jpg",
@@ -51,7 +48,6 @@ const keleTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/kele/kc6.PNG",
 ];
 const keleTopYCC = keleTopCovers.sort(() => Math.random() - 0.5);
-
 
 const anranTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/anran/ac1.jpg",
@@ -69,8 +65,7 @@ const cccTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/ccc/cc4.jpg",
     "https://ai8ai.github.io/abcat/ccc/cc5.jpg",
 ];
-const cccTopYCC = cccTopCovers.sort(() => Math.random() - 0.5);
-
+const cccTop = cccTopCovers.sort(() => Math.random() - 0.5);
 
 const xlzTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/xlz/xc1.jpg",
@@ -81,7 +76,6 @@ const xlzTopCovers: string[] = [
 ];
 const xlzTopYCC = xlzTopCovers.sort(() => Math.random() - 0.5);
 
-
 const dxyTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/dxy/dc1.jpg",
     "https://ai8ai.github.io/abcat/dxy/dc2.jpg",
@@ -89,7 +83,6 @@ const dxyTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/dxy/dc4.JPG",
 ];
 const dxyTopYCC = dxyTopCovers.sort(() => Math.random() - 0.5);
-
 
 const lxlTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/lxl/lc1.jpg",
@@ -100,7 +93,6 @@ const lxlTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/lxl/lc6.jpg",
 ];
 const lxlTopYCC = lxlTopCovers.sort(() => Math.random() - 0.5);
-
 
 const othersTopCovers: string[] = [
     "https://ai8ai.github.io/abcat/others/oc1.jpg",
@@ -122,7 +114,7 @@ const topCategories: Cate[] = [
     { id: "3", title: "Wang Xinyao \n Yanni 王馨瑶",    cover: wxyTopYCC[0] },
     { id: "4", title: "Kele Vicky",                 cover: keleTopYCC[0] },
     { id: "5", title: "Anran 安然",                 cover: anranTopYCC[0] },
-    { id: "6", title: "Cheng Chengcheng 程程程",    cover: cccTopYCC[0] },
+    { id: "6", title: "Cheng Chengcheng 程程程",    cover: cccTop[0] },
     { id: "7", title: "Xu Lizhi Booty \n 徐莉芝",   cover: xlzTopYCC[0] },
     { id: "8", title: "Du Xiaoyu 杜小雨",           cover: dxyTopYCC[0] },
     { id: "9", title: "Lin Xinglan 林星阑",         cover: lxlTopYCC[0] },
@@ -130,19 +122,19 @@ const topCategories: Cate[] = [
 ];
 
 
-const yccCate: Cate[] = [
-    { id: "1", title: "Amazing Start!", cover: srcTopYCC[0] },
-    { id: "2", title: "Explore the Beauty", cover: srcTopYCC[1] },
-    { id: "3", title: "Vibrant Colors", cover: srcTopYCC[2] },
-    { id: "4", title: "Bold & Confident", cover: srcTopYCC[0] },
-    { id: "5", title: "Artistic Vision", cover: srcTopYCC[1] },
-    { id: "6", title: "Nature's Essence", cover: srcTopYCC[2] },
-    { id: "7", title: "Graceful Elegance", cover: srcTopYCC[0] },
-    { id: "8", title: "Iconic Moments", cover: srcTopYCC[1] }
-];
+// const yccCate: Cate[] = [
+//     { id: "1", title: "Amazing Start!", cover: srcTopYCC[0] },
+//     { id: "2", title: "Explore the Beauty", cover: srcTopYCC[1] },
+//     { id: "3", title: "Vibrant Colors", cover: srcTopYCC[2] },
+//     { id: "4", title: "Bold & Confident", cover: srcTopYCC[0] },
+//     { id: "5", title: "Artistic Vision", cover: srcTopYCC[1] },
+//     { id: "6", title: "Nature's Essence", cover: srcTopYCC[2] },
+//     { id: "7", title: "Graceful Elegance", cover: srcTopYCC[0] },
+//     { id: "8", title: "Iconic Moments", cover: srcTopYCC[1] }
+// ];
 
 // Return a promise that resolves to local data
 const TopCatPromise = Promise.resolve(topCategories);
-const YccCatPromise = Promise.resolve(yccCate);
+// const YccCatPromise = Promise.resolve(yccCate);
 
-export { TopCatPromise, YccCatPromise};
+export { TopCatPromise};

@@ -4,13 +4,13 @@ import { router } from 'expo-router';
 import CategoryScreen from '@/components/CategoryScreen';
 import getCategoryData from '@/utils/getCategoryData';
 
-const WXY = () => {
+const YCC = () => {
     return (
         <CategoryScreen
-            fetchCategoryData={() => getCategoryData('wxyCat')}
-            onPressItem={(item) => router.push({ pathname: '/detail/wxy', params: { itemid: item.id } })}
+            fetchCategoryData={() => getCategoryData('wxy_cat')}
+            onPressItem={(item) => router.push({ pathname: '/detail/cat2img', params: { itemid: item.id } })}
         />
     );
 };
 
-export default WXY;
+export default YCC;
