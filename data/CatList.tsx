@@ -1,0 +1,35 @@
+// CatList.tsx
+export const yccCovers: string[] = [
+    "https://ai8ai.github.io/abcat/ycc/yc1.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc2.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc3.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc4.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc5.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc6.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc7.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc8.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc9.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc10.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc11.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc12.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc13.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc14.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc15.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc16.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc17.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc18.jpg",
+    "https://ai8ai.github.io/abcat/ycc/yc19.jpg",
+]
+
+export const xlzCovers: string[] = [
+    "https://ai8ai.github.io/abcat/xlz/xc1.jpg",
+    "https://ai8ai.github.io/abcat/xlz/xc2.jpg",
+    "https://ai8ai.github.io/abcat/xlz/xc3.jpg",
+    "https://ai8ai.github.io/abcat/xlz/xc4.jpg",
+    "https://ai8ai.github.io/abcat/xlz/xc5.jpg",
+    "https://ai8ai.github.io/abcat/xlz/xc1.jpg",
+    "https://ai8ai.github.io/abcat/xlz/xc2.jpg",
+    "https://ai8ai.github.io/abcat/xlz/xc3.jpg",
+    "https://ai8ai.github.io/abcat/xlz/xc4.jpg",
+    "https://ai8ai.github.io/abcat/xlz/xc5.jpg",
+]

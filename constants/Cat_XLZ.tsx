@@ -1,22 +1,11 @@
 // getTopCate.tsx
 import { Cate } from '@/types'; // Import the TopCate interface
+import { xlzCovers } from '@/data/CatList';
 
-const yccCovers: string[] = [
-    "https://ai8ai.github.io/abcat/xlz/xc1.jpg",
-    "https://ai8ai.github.io/abcat/xlz/xc2.jpg",
-    "https://ai8ai.github.io/abcat/xlz/xc3.jpg",
-    "https://ai8ai.github.io/abcat/xlz/xc4.jpg",
-    "https://ai8ai.github.io/abcat/xlz/xc5.jpg",
-    "https://ai8ai.github.io/abcat/xlz/xc1.jpg",
-    "https://ai8ai.github.io/abcat/xlz/xc2.jpg",
-    "https://ai8ai.github.io/abcat/xlz/xc3.jpg",
-    "https://ai8ai.github.io/abcat/xlz/xc4.jpg",
-    "https://ai8ai.github.io/abcat/xlz/xc5.jpg",
-]
-const srcYCC = yccCovers.sort(() => Math.random() - 0.5);
+const srcYCC = xlzCovers.sort(() => Math.random() - 0.5);
 
 const yccCate: Cate[] = [
-    { id: "YCCcat01", title: "Amazing Start!", cover: srcYCC[0] },
+    { id: "YCCcat01", title: "Amazing 1Start!", cover: srcYCC[0] },
     { id: "YCCcat02", title: "Explore the Beauty", cover: srcYCC[1] },
     { id: "YCCcat03", title: "Vibrant Colors", cover: srcYCC[2] },
     { id: "YCCcat04", title: "Bold & Confident", cover: srcYCC[3] },
