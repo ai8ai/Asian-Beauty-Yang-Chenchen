@@ -9,16 +9,16 @@ import styles   from '@/styles/styles';
 import HomeList from '@/components/home/getHomeList'; // Import the Home Listed Categories
 
 const routeMap: Record<string, string> = {
-    "1": "/Yang Chenchen",
-    "2": "/Sun Yunzhu",
-    "3": "/Wang Xinyao",
-    "4": "/Vicky Kele",
-    "5": "/Anran",
-    "6": "/Cheng Chengcheng",
-    "7": "/Xu Lizhi",
-    "8": "/Du Xiaoyu",
-    "9": "/Lin Xinglan",
-    "10": "/and More",
+    "1": "yiren/Yang Chenchen",
+    "2": "yiren/Sun Yunzhu",
+    "3": "yiren/Wang Xinyao",
+    "4": "yiren/Vicky Kele",
+    "5": "yiren/Anran",
+    "6": "yiren/Cheng Chengcheng",
+    "7": "yiren/Xu Lizhi",
+    "8": "yiren/Du Xiaoyu",
+    "9": "yiren/Lin Xinglan",
+    "10": "yiren/and More",
 };
 
 
