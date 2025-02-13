@@ -1,8 +1,8 @@
 import React from 'react';
 import { router } from 'expo-router';
 
-import CategoryScreen from '@/components/CategoryScreen';
-import getMyCat from '@/app/cat/getMyCat';
+import CategoryScreen from '@/components/cat/CatPage';
+import getMyCat from '@/components/cat/getCatList';
 
 const YCC = () => {
     return (

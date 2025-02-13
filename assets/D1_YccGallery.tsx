@@ -3,7 +3,7 @@ import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from
 import { router } from 'expo-router';
 
 import styles from '@/styles/styles';
-import YccCatPromise from '@/app/home/getHomeList'; // Import the Promise
+import YccCatPromise from '@/components/home/getHomeList'; // Import the Promise
 
 interface YccCategory {
     id: string;

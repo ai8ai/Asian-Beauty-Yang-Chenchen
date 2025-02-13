@@ -6,7 +6,7 @@ import { router } from 'expo-router';  // To navigate between screens
 import { Cate } from '@/types'; 
 import styles   from '@/styles/styles';
 
-import HomeList from '@/app/home/getHomeList'; // Import the Home Listed Categories
+import HomeList from '@/components/home/getHomeList'; // Import the Home Listed Categories
 
 const routeMap: Record<string, string> = {
     "1": "/Yang Chenchen",
