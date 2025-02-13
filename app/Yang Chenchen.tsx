@@ -1,3 +1,4 @@
+// ycc_cat.tsx
 import React from 'react';
 import { router } from 'expo-router';
 
