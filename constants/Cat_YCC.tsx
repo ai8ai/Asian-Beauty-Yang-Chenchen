@@ -1,5 +1,5 @@
 import { Cate } from '@/types'; // Import the TopCate interface
-import fetchCover_Cat from '@/constants/fetchCover_Cat'; // The new fetch function
+import fetchCover_Cat from '@/components/cat/fetchCover_Cat'; // The new fetch function
 
 const getYccCate = async (): Promise<Cate[]> => {
     try {

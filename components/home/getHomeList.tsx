@@ -112,12 +112,12 @@ const HomeList: Cate[] = [
     { id: "2", title: "Son Yoon Joo \n 손윤주 孙允珠",  cover: syzHomeCover[0] },
     { id: "3", title: "Wang Xinyao \n Yanni 王馨瑶",    cover: wxyHomeCover[0] },
     { id: "4", title: "Kele Vicky",                     cover: keleHomeCover[0] },
-    { id: "5", title: "Anran 安然",                     cover: anranHomeCover[0] },
-    { id: "6", title: "Cheng Chengcheng 程程程",        cover: cccHomeCover[0] },
-    { id: "7", title: "Xu Lizhi Booty \n 徐莉芝",       cover: xlzHomeCover[0] },
-    { id: "8", title: "Du Xiaoyu 杜小雨",               cover: dxyHomeCover[0] },
-    { id: "9", title: "Lin Xinglan 林星阑",             cover: lxlHomeCover[0] },
-    { id: "10",title: "and More...",                    cover: othersHomeCover[0] },
+    { id: "5", title: "Xu Lizhi Booty \n 徐莉芝",       cover: xlzHomeCover[0] },
+    { id: "6",title: "and More...",                    cover: othersHomeCover[0] },
+    // { id: "5", title: "Anran 安然",                     cover: anranHomeCover[0] },
+    // { id: "6", title: "Cheng Chengcheng 程程程",        cover: cccHomeCover[0] },
+    // { id: "8", title: "Du Xiaoyu 杜小雨",               cover: dxyHomeCover[0] },
+    // { id: "9", title: "Lin Xinglan 林星阑",             cover: lxlHomeCover[0] },
 ];
 
 export default HomeList;

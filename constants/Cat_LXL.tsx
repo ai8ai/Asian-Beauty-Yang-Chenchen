@@ -8,11 +8,7 @@ const yccCovers: string[] = [
     "https://ai8ai.github.io/abcat/lxl/lc4.jpg",
     "https://ai8ai.github.io/abcat/lxl/lc5.jpg",
     "https://ai8ai.github.io/abcat/lxl/lc6.jpg",
-    "https://ai8ai.github.io/abcat/lxl/lc2.jpg",
-    "https://ai8ai.github.io/abcat/lxl/lc3.jpg",
-    "https://ai8ai.github.io/abcat/lxl/lc4.jpg",
-    "https://ai8ai.github.io/abcat/lxl/lc5.jpg",
-    "https://ai8ai.github.io/abcat/lxl/lc6.jpg",
+ 
 ]
 const srcYCC = yccCovers.sort(() => Math.random() - 0.5);
 

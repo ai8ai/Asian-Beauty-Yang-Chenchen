@@ -1,19 +1,19 @@
 // utils/getCategoryData.ts
 import { Cate } from '@/types';
-import fetchCover_Cat from '@/constants/fetchCover_Cat';
+import fetchCover_Cat from '@/components/cat/fetchCover_Cat';
 
 const getCategoryData = async (category: string): Promise<Cate[]> => {
     const categoryMap: Record<string, { coverKey: string; catKey: string }> = {
-        ycc_cat: { coverKey: 'HomeCoverYCC', catKey: 'CatYCC' },
-        syz_cat: { coverKey: 'HomeCoverSYZ', catKey: 'CatSYZ' },
-        wxy_cat: { coverKey: 'HomeCoverWXY', catKey: 'CatWXY' },
-        kele_cat: { coverKey: 'HomeCoverKELE', catKey: 'CatKELE' },
-        anran_cat: { coverKey: 'HomeCoverANRAN', catKey: 'CatANRAN' },
-        ccc_cat: { coverKey: 'HomeCoverCCC', catKey: 'CatCCC' },
-        xlz_cat: { coverKey: 'HomeCoverXLZ', catKey: 'CatXLZ' },
-        dxy_cat: { coverKey: 'HomeCoverDXY', catKey: 'CatDXY' },
-        lxl_cat: { coverKey: 'HomeCoverLXL', catKey: 'CatLXL' },
-        default: { coverKey: 'HomeCoverOTHERS', catKey: 'CatOTHERS' },
+        ycc_cat: { coverKey: 'CatCoverYCC', catKey: 'CatYCC' },
+        syz_cat: { coverKey: 'CatCoverSYZ', catKey: 'CatSYZ' },
+        wxy_cat: { coverKey: 'CatCoverWXY', catKey: 'CatWXY' },
+        kele_cat: { coverKey: 'CatCoverKELE', catKey: 'CatKELE' },
+        anran_cat: { coverKey: 'CatCoverANRAN', catKey: 'CatANRAN' },
+        ccc_cat: { coverKey: 'CatCoverCCC', catKey: 'CatCCC' },
+        xlz_cat: { coverKey: 'CatCoverXLZ', catKey: 'CatXLZ' },
+        dxy_cat: { coverKey: 'CatCoverDXY', catKey: 'CatDXY' },
+        lxl_cat: { coverKey: 'CatCoverLXL', catKey: 'CatLXL' },
+        default: { coverKey: 'CatCoverOTHERS', catKey: 'CatOTHERS' },
     };
 
     const { coverKey, catKey } = categoryMap[category] || categoryMap.default;
