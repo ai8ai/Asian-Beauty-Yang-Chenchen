@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, ActivityIndicator, Animated, Pressable, Modal, Text, TextInput, Button } from 'react-native';
 import styles from '@/styles/styles';
+import { StatusBar } from 'expo-status-bar';
 
 import { AnimationType, getAnimationStyle } from '@/utils/animationStyles';
 import useScaleAnimation from '@/hooks/useAnimations';
@@ -19,7 +20,7 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
     const { scaleAnim, animateImageChange } = useScaleAnimation();
     const { savedIntervalValue, intervalInput, handleIntervalChange, saveInterval, intervalDuration } = useInterval();
     const { modalVisible, setModalVisible, isIntervalInputVisible, setIsIntervalInputVisible, modalOptions } =
-        useModalActions(images, currentIndex, () => {});
+        useModalActions(images, currentIndex, () => { });
 
     useEffect(() => {
         if (images.length > 0 && !firstImageLoaded) {
@@ -42,7 +43,7 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
             }, intervalDuration);
 
             console.log(`Current image path: ${images[currentIndex]}`);
-            
+
             return () => clearInterval(interval);
         }
     }, [firstImageLoaded, images, animateImageChange, intervalDuration, currentIndex]);
@@ -79,7 +80,10 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
                     </View>
                 </View>
             </Modal>
+            <StatusBar style="light" translucent />
+
         </View>
+
     );
 };
 

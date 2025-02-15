@@ -2,6 +2,7 @@ import styles from '@/styles/styles'
 import { useEffect, useState } from 'react';
 import { View, ActivityIndicator, Animated, Pressable, Modal, Text, TextInput, Button } from 'react-native';
 import * as MediaLibrary from 'expo-media-library';
+import { StatusBar } from 'expo-status-bar';
 
 import { AnimationType, getAnimationStyle } from '@/utils/animationStyles';
 import useScaleAnimation from '@/hooks/useAnimations';
@@ -75,6 +76,7 @@ const AlbumSlideshow: React.FC<{ album: MediaLibrary.Album }> = ({ album }) => {
                     </View>
                 </View>
             </Modal>
+            <StatusBar style="light" translucent />
         </View>
     );
 };
