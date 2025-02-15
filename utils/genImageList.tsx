@@ -7,7 +7,11 @@
  * ["https://ai8ai.github.io/abcat/dxy/dc1.jpg", ..., "https://ai8ai.github.io/abcat/dxy/dc1000.jpg"]
  */
 
-const BASE_URL = "https://ai8ai.github.io/";
+const BASE_URL_CAT = "https://ai8ai.github.io/abcat/";
+const BASE_URL_FRESH = "https://ai8ai.github.io/abfresh/";
 
-export const genImgList = (path: string, count: number): string[] =>
-    Array.from({ length: count }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`);  
+export const genCatCoverList = (path: string, count: number): string[] =>
+    Array.from({ length: count }, (_, i) => `${BASE_URL_CAT}${path}${i + 1}.jpg`);  
+
+export const genFreshList = (path: string, count: number): string[] =>
+    Array.from({ length: count }, (_, i) => `${BASE_URL_FRESH}${path}${i + 1}.jpg`);  

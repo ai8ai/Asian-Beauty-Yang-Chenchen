@@ -4,7 +4,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import styles from '@/styles/styles';
 import { Cate } from '@/types';
 
-import {genImgList} from '@/utils/genImageList'
+import {genCatCoverList} from '@/utils/genImageList'
 
 const CategoryScreen: React.FC = () => {
     const [categories, setCategories] = useState<Cate[]>([]);
@@ -12,12 +12,12 @@ const CategoryScreen: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     const { itemid } = useLocalSearchParams();  // Get the itemid from route params
 
-    const yccCatCover = genImgList("abcat/ycc/yc", 20).sort(() => Math.random() - 0.5);
-    const syzCatCover = genImgList("abcat/syz/sc", 20).sort(() => Math.random() - 0.5);
-    const wxyCatCover = genImgList("abcat/wxy/wc", 20).sort(() => Math.random() - 0.5);
-    const keleCatCover= genImgList("abcat/kele/kc",20).sort(() => Math.random() - 0.5);
-    const xlzCatCover = genImgList("abcat/xlz/xc", 20).sort(() => Math.random() - 0.5);
-    const othersCatCover= genImgList("abcat/others/oc",20).sort(() => Math.random() - 0.5);
+    const yccCatCover = genCatCoverList("ycc/yc", 20).sort(() => Math.random() - 0.5);
+    const syzCatCover = genCatCoverList("syz/sc", 20).sort(() => Math.random() - 0.5);
+    const wxyCatCover = genCatCoverList("wxy/wc", 20).sort(() => Math.random() - 0.5);
+    const keleCatCover= genCatCoverList("kele/kc",20).sort(() => Math.random() - 0.5);
+    const xlzCatCover = genCatCoverList("xlz/xc", 20).sort(() => Math.random() - 0.5);
+    const othersCatCover= genCatCoverList("others/oc",20).sort(() => Math.random() - 0.5);
     
     useEffect(() => {
 
@@ -35,7 +35,7 @@ const CategoryScreen: React.FC = () => {
             ]);
         } else if (itemid === 'syz') {
             setCategories([
-                { id: "SYZyf1",  title: "Fresh & Trending", cover: syzCatCover[0]  },
+                { id: "SYZsf1",  title: "Fresh & Trending", cover: syzCatCover[0]  },
                 { id: "SYZcat02", title: "Explore the Beauty", cover: syzCatCover[1]  },
                 { id: "SYZcat03", title: "Vibrant Colors", cover: syzCatCover[2]  },
                 { id: "SYZcat04", title: "Bold & Confident", cover: syzCatCover[3]  },

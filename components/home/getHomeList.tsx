@@ -1,13 +1,13 @@
 // Home Category
 import { Cate } from '@/types';
-import {genImgList} from '@/utils/genImageList'
+import {genCatCoverList} from '@/utils/genImageList'
 
-const yccHomeCover = genImgList("abcat/ycc/yc", 10).sort(() => Math.random() - 0.5);
-const syzHomeCover = genImgList("abcat/syz/sc", 10).sort(() => Math.random() - 0.5);
-const wxyHomeCover = genImgList("abcat/wxy/wc", 10).sort(() => Math.random() - 0.5);
-const keleHomeCover= genImgList("abcat/kele/kc",10).sort(() => Math.random() - 0.5);
-const xlzHomeCover = genImgList("abcat/xlz/xc", 10).sort(() => Math.random() - 0.5);
-const othersHomeCover= genImgList("abcat/others/oc",10).sort(() => Math.random() - 0.5);
+const yccHomeCover = genCatCoverList("ycc/yc", 10).sort(() => Math.random() - 0.5);
+const syzHomeCover = genCatCoverList("syz/sc", 10).sort(() => Math.random() - 0.5);
+const wxyHomeCover = genCatCoverList("wxy/wc", 10).sort(() => Math.random() - 0.5);
+const keleHomeCover= genCatCoverList("kele/kc",10).sort(() => Math.random() - 0.5);
+const xlzHomeCover = genCatCoverList("xlz/xc", 10).sort(() => Math.random() - 0.5);
+const othersHomeCover= genCatCoverList("others/oc",10).sort(() => Math.random() - 0.5);
 
 const HomeList: Cate[] = [
     { id: "ycc", title: "Yang Chenchen \n Yome Sugar 杨晨晨", route: "CatScreen", cover: yccHomeCover[0] },
