@@ -7,7 +7,7 @@
  * ["https://ai8ai.github.io/abcat/dxy/dc1.jpg", ..., "https://ai8ai.github.io/abcat/dxy/dc1000.jpg"]
  */
 
-const BASE_URL = "https://ai8ai.github.io/abcat/";
+const BASE_URL = "https://ai8ai.github.io/";
 
 export const genImgList = (path: string, count: number): string[] =>
     Array.from({ length: count }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`);  

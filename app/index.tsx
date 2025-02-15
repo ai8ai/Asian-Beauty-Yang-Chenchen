@@ -5,12 +5,13 @@ import { router } from 'expo-router';  // To navigate between screens
 
 import { Cate } from '@/types'; 
 import styles   from '@/styles/styles';
-import HomeList from '@/components/home/getHomeList'; // Import the Home Listed Categories
+
+import HomeList  from '@/components/home/getHomeList'; // Import the Home Listed Categories
 
 const HomeScreen = () => {
     const handleItemPress = (item: Cate) => {
         router.push({
-            pathname: item.route as any,
+            pathname: "/CatScreen",
             params: { itemid: item.id },
         });
     };
