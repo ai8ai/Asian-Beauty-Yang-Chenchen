@@ -12,7 +12,7 @@ const HomeScreen = () => {
     const handleItemPress = (item: Cate) => {
         router.push({
             pathname: "/CatScreen",
-            params: { itemid: item.id },
+            params: { itemid: item.id, itemtitle: item.shorttitle },
         });
     };
 
