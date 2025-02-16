@@ -39,59 +39,37 @@ const CategoryScreen: React.FC = () => {
         } else if (itemid === 'syz') {
             setCategories([
                 { id: "SYZsf1",  title: "Fresh & Trending", cover: syzCatCover[0]  },
-                { id: "SYZcat02", title: "Explore the Beauty", cover: syzCatCover[1]  },
-                { id: "SYZcat03", title: "Vibrant Colors", cover: syzCatCover[2]  },
-                { id: "SYZcat04", title: "Bold & Confident", cover: syzCatCover[3]  },
-                { id: "SYZcat05", title: "Artistic Vision", cover: syzCatCover[4]  },
-                { id: "SYZcat06", title: "Nature's Essence", cover: syzCatCover[5]  },
-                { id: "SYZcat07", title: "Graceful Elegance", cover: syzCatCover[6]  },
-                { id: "SYZcat08", title: "Iconic Moments", cover: syzCatCover[7]  }
+                { id: "SYZStr", title: "strapless top", cover: syzCatCover[1]  },
+                { id: "SYZSpa", title: "spaghetti strap", cover: syzCatCover[2]  },
+                { id: "SYZLace", title: "lace", cover: syzCatCover[3]  },
             ]);
         } else if (itemid === 'wxy') {
             setCategories([
                 { id: "WXYwf1",  title: "Fresh & Trending", cover: wxyCatCover[0]  },
-                { id: "WXYcat02", title: "Explore the Beauty", cover: wxyCatCover[1]  },
-                { id: "WXYcat03", title: "Vibrant Colors", cover: wxyCatCover[2]  },
-                { id: "WXYcat04", title: "Bold & Confident", cover: wxyCatCover[3]  },
-                { id: "WXYcat05", title: "Artistic Vision", cover: wxyCatCover[4]  },
-                { id: "WXYcat06", title: "Nature's Essence", cover: wxyCatCover[5]  },
-                { id: "WXYcat07", title: "Graceful Elegance", cover: wxyCatCover[6]  },
-                { id: "WXYcat08", title: "Iconic Moments", cover: wxyCatCover[7]  }
-
+                { id: "WXYBar", title: "bar", cover: wxyCatCover[1]  },
+                { id: "WXYLace", title: "lace", cover: wxyCatCover[2]  },
+                { id: "WXYSpa", title: "spaghetti strap", cover: wxyCatCover[3]  },
             ]);
         } else if (itemid === 'kele') {
             setCategories([
                 { id: "KELEkf1",  title: "Fresh & Trending", cover: keleCatCover[0]  },
-                { id: "KELEcat02", title: "Explore the Beauty", cover: keleCatCover[1]  },
-                { id: "KELEcat03", title: "Vibrant Colors", cover: keleCatCover[2]  },
-                { id: "KELEcat04", title: "Bold & Confident", cover: keleCatCover[3]  },
-                { id: "KELEcat05", title: "Artistic Vision", cover: keleCatCover[4]  },
-                { id: "KELEcat06", title: "Nature's Essence", cover: keleCatCover[5]  },
-                { id: "KELEcat07", title: "Graceful Elegance", cover: keleCatCover[6]  },
-                { id: "KELEcat08", title: "Iconic Moments", cover: keleCatCover[7]  }
-
+                { id: "KELEChe", title: "cheongsam white", cover: keleCatCover[1]  },
+                { id: "KELEFlo", title: "red floral", cover: keleCatCover[2]  },
+                { id: "KELESpa", title: "spaghetti strap", cover: keleCatCover[3]  },
             ]);
         } else if (itemid === 'xlz') {
             setCategories([
                 { id: "XLZxf1",  title: "Fresh & Trending", cover: xlzCatCover[0]  },
-                { id: "XLZcat02", title: "Explore the Beauty", cover: xlzCatCover[1]  },
-                { id: "XLZcat03", title: "Vibrant Colors", cover: xlzCatCover[2]  },
-                { id: "XLZcat04", title: "Bold & Confident", cover: xlzCatCover[3]  },
-                { id: "XLZcat05", title: "Artistic Vision", cover: xlzCatCover[4]  },
-                { id: "XLZcat06", title: "Nature's Essence", cover: xlzCatCover[5]  },
-                { id: "XLZcat07", title: "Graceful Elegance", cover: xlzCatCover[6]  },
-                { id: "XLZcat08", title: "Iconic Moments", cover: xlzCatCover[7]  },
+                { id: "XLZSpa", title: "purple spaghetti", cover: xlzCatCover[1]  },
+                { id: "XLZLace", title: "lace", cover: xlzCatCover[2]  },
+                { id: "XLZPro", title: "professional", cover: xlzCatCover[4]  },
             ]);
         } else if (itemid === 'others') {
             setCategories([
                 { id: "OTHERSof1",  title: "Fresh & Trending", cover: othersCatCover[0]  },
-                { id: "OTHERScat02", title: "Explore the Beauty", cover: othersCatCover[1]  },
-                { id: "OTHERScat03", title: "Vibrant Colors", cover: othersCatCover[2]  },
-                { id: "OTHERScat04", title: "Bold & Confident", cover: othersCatCover[3]  },
-                { id: "OTHERScat05", title: "Artistic Vision", cover: othersCatCover[4]  },
-                { id: "OTHERScat06", title: "Nature's Essence", cover: othersCatCover[5]  },
-                { id: "OTHERScat07", title: "Graceful Elegance", cover: othersCatCover[6]  },
-                { id: "OTHERScat08", title: "Iconic Moments", cover: othersCatCover[7]  }
+                { id: "OTHERSStu", title: "student w glass", cover: othersCatCover[1]  },
+                { id: "OTHERSGreen", title: "green", cover: othersCatCover[2]  },
+                { id: "OTHERSMid", title: "middle age", cover: othersCatCover[3]  },
             ]);
         } else {
             setCategories([
