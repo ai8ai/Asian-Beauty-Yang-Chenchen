@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
 import Slideshow from '@/components/SlideshowOnline';
-import {genFreshList, genYCCList, genSYZList, genWXYList, genKeleList,genOthersList, genXLZList} from '@/utils/genImageList'
+import {genFreshList, genYCCList, genSYZList, genWXYList, genKeleList,genOthersList, genXLZList} from '@/components/cat/genImageList'
 
 const yccList = genFreshList("ycc/yf", 20).sort(() => Math.random() - 0.5);
 const syzList = genFreshList("syz/sf", 20).sort(() => Math.random() - 0.5);

@@ -15,6 +15,10 @@ const BASE_URL_WXY = "https://ai8ai.github.io/abwxy/";
 const BASE_URL_KELE = "https://ai8ai.github.io/abkele/";
 const BASE_URL_XLZ = "https://ai8ai.github.io/abxlz/";
 const BASE_URL_OTHERS = "https://ai8ai.github.io/abothers/";
+const BASE_URL_ANRAN = "https://ai8ai.github.io/abanran/";
+const BASE_URL_CCC = "https://ai8ai.github.io/abccc/";
+const BASE_URL_DXY = "https://ai8ai.github.io/abdxy/";
+const BASE_URL_LXL = "https://ai8ai.github.io/ablxl/";
 // const BASE_URL_ = "https://ai8ai.github.io/ab/";
 
 export const genCatCoverList = (path: string, count: number): string[] =>
@@ -40,3 +44,16 @@ export const genXLZList = (path: string, count: number): string[] =>
 
 export const genOthersList = (path: string, count: number): string[] =>
     Array.from({ length: count }, (_, i) => `${BASE_URL_OTHERS}${path}${i + 1}.jpg`);  
+
+
+export const genCCCList = (path: string, count: number): string[] =>
+    Array.from({ length: count }, (_, i) => `${BASE_URL_CCC}${path}${i + 1}.jpg`);  
+
+export const genANRANList = (path: string, count: number): string[] =>
+    Array.from({ length: count }, (_, i) => `${BASE_URL_ANRAN}${path}${i + 1}.jpg`);  
+
+export const genDXYList = (path: string, count: number): string[] =>
+    Array.from({ length: count }, (_, i) => `${BASE_URL_DXY}${path}${i + 1}.jpg`);  
+
+export const genLXLList = (path: string, count: number): string[] =>
+    Array.from({ length: count }, (_, i) => `${BASE_URL_LXL}${path}${i + 1}.jpg`);  

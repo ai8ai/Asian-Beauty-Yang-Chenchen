@@ -5,7 +5,7 @@ import styles from '@/styles/styles';
 import { Cate } from '@/types';
 import { useNavigation } from '@react-navigation/native';
 
-import {genCatCoverList} from '@/utils/genImageList'
+import {genCatCoverList} from '@/components/cat/genImageList'
 
 const CategoryScreen: React.FC = () => {
     const [categories, setCategories] = useState<Cate[]>([]);
@@ -25,6 +25,10 @@ const CategoryScreen: React.FC = () => {
     const keleCatCover= genCatCoverList("kele/kc",20).sort(() => Math.random() - 0.5);
     const xlzCatCover = genCatCoverList("xlz/xc", 20).sort(() => Math.random() - 0.5);
     const othersCatCover= genCatCoverList("others/oc",20).sort(() => Math.random() - 0.5);
+    const dxyCatCover = genCatCoverList("dxy/dc", 20).sort(() => Math.random() - 0.5);
+    const cccCatCover = genCatCoverList("ccc/cc", 20).sort(() => Math.random() - 0.5);
+    const lxlCatCover = genCatCoverList("lxl/lc", 20).sort(() => Math.random() - 0.5);
+    const anranCatCover = genCatCoverList("anran/ac", 20).sort(() => Math.random() - 0.5);
     
     useEffect(() => {
 
