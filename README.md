@@ -1,19 +1,15 @@
-# Welcome to Asian Beauty Yang Chenchen Yome 👋
+# Welcome to Asian Beauty 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Asian Beauty is a [collection](https://aidres.com) of Asian beautiful women including Japanese, Korean, Chinese, Viatnamies, Philipines, and more.
 
 ## Get started
 
-1. Install dependencies
+1. Download the demo published at: [googleplay](https://play.google.com/store/apps/details?id=com.aixpertlab.asianbeautyycc)
+  
+2. The App is based on expo-router.
 
    ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
+    npx expo 
    ```
 
 In the output, you'll find options to open the app in a

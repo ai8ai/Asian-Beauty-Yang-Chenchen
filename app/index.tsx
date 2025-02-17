@@ -10,6 +10,8 @@ import HomeList  from '@/components/home/getHomeList'; // Import the Home Listed
 
 const HomeScreen = () => {
     const handleItemPress = (item: Cate) => {
+        // { id: "anran", title: "Anran 安然",            shorttitle:"Anran",            cover: anranHomeCover[0] },
+        // { id: "kele", title: "Kele Vicky",             shorttitle:"Kele Vicky",    cover: keleHomeCover[0] },
         router.push({
             pathname: "/CatScreen",
             params: { itemid: item.id, itemtitle: item.shorttitle },
