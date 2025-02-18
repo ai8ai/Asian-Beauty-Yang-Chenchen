@@ -65,7 +65,7 @@ export const genOthersList = (path: string, count: number): string[] =>
 export const genCCCList = (path: string, count: number): string[] =>
     Array.from({ length: count }, (_, i) => `${BASE_URL_CCC}${path}${i + 1}.jpg`).sort(() => Math.random() - 0.5);
 
-export const genANRANList = (path: string, count: number): string[] =>
+export const genAnranList = (path: string, count: number): string[] =>
     Array.from({ length: count }, (_, i) => `${BASE_URL_ANRAN}${path}${i + 1}.jpg`).sort(() => Math.random() - 0.5);
 
 export const genDXYList = (path: string, count: number): string[] =>
