@@ -29,14 +29,14 @@ const CategoryScreen: React.FC = () => {
                 { id: "YCCPure", title: "Angelically Innocent", cover: genYCCList("pure/pu", 5)[0], count: "10", path: "abycc/pure/pu" },
                 { id: "YCCSpa", title: "Sultry Spaghetti Straps", cover: genYCCList("spaghetti/sp", 10)[0], count: "10", path: "abycc/spaghetti/sp" },
                 { id: "YCCChe", title: "Elegant in Cheongsam", cover: genYCCList("cheongsam/ch", 10)[0], count: "10", path: "abycc/cheongsam/ch" },
-                { id: "YCCStr", title: "Bare & Beautiful", cover: genYCCList("strapless/st", 10)[0], count: "10", path: "abycc/cheongsam/ch" },
+                { id: "YCCStr", title: "Bare & Beautiful", cover: genYCCList("strapless/st", 10)[0], count: "10", path: "abycc/strapless/st" },
                 { id: "YCCBed", title: "Cozy & Seductive Moments", cover: genYCCList("bedbathsofa/be", 10)[0], count: "10", path: "abycc/bedbathsofa/be" },
                 { id: "YCCSeq", title: "Dazzling in Sequins", cover: genYCCList("sequins/se", 10)[0], count: "10", path: "abycc/sequins/se" },
                 { id: "YCCBlue", title: "Mystic in Blue", cover: genYCCList("blue/bl", 10)[0], count: "10", path: "abycc/blue/bl" },
                 { id: "YCCFlo", title: "Flirty Floral Charms", cover: genYCCList("floralskirt/fl", 10)[0], count: "10", path: "abycc/floralskirt/fl" },
                 { id: "YCCGlass", title: "Sensual in Glasses", cover: genYCCList("glass/gl", 10)[0], count: "10", path: "abycc/glass/gl" },
                 { id: "YCCGreen", title: "Enchanting in Green", cover: genYCCList("green/gr", 10)[0], count: "10", path: "abycc/green/gr" },
-                { id: "YCCDenim", title: "Casual Chic in Denim", cover: genYCCList("denim/de", 10)[0], count: "10", path: "abycc/denim/de" },
+                { id: "YCCDenim", title: "Casual Chic in Denim", cover: genYCCList("demins/de", 10)[0], count: "10", path: "abycc/demins/de" },
                 { id: "YCCPink", title: "Pretty in Pink", cover: genYCCList("pinkgirl/pi", 10)[0], count: "10", path: "abycc/pinkgirl/pi" },
                 { id: "YCCCos", title: "Fantasy & Cosplay Queens", cover: genYCCList("cosplay/co", 10)[0], count: "10", path: "abycc/cosplay/co" },
             ]);
@@ -44,45 +44,62 @@ const CategoryScreen: React.FC = () => {
 
         } else if (itemid === 'syz') {
             setCategories([
-                { id: "SYZsf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("syz/sf", 20)[0], count: "10", path: "abfresh/syz/sf" },
-                { id: "SYZStr", title: "Bare & Beautiful", cover: genSYZList("strapless/st", 10)[0], count: "10", path: "absyz/strapless/st" },
-                { id: "SYZSpa", title: "Sultry Spaghetti Straps",  cover: genSYZList("spaghetti/sp", 10)[2],  count: "10", path: "spaghetti/sp" },
-                { id: "SYZLace", title: "Seductive Lace", cover: genSYZList("lace/la", 10)[1],  count: "10", path: "lace/la" },
+                { id: "SYZsf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("syz/sf", 20)[0], count: "10",       path: "abfresh/syz/sf" },
+                { id: "SYZStr", title: "Bare & Beautiful", cover: genSYZList("strapless/st", 10)[0], count: "10",           path: "absyz/strapless/st" },
+                { id: "SYZSpa", title: "Sultry Spaghetti Straps",  cover: genSYZList("spaghetti/sp", 10)[2],  count: "10",  path: "absyz/spaghetti/sp" },
+                { id: "SYZLace", title: "Seductive Lace", cover: genSYZList("lace/la", 10)[1],  count: "10",                path: "absyz/lace/la" },
             ]);
 
 
         } else if (itemid === 'wxy') {
             setCategories([
-                { id: "WXYwf1", title: "Fresh & Trending", cover: genFreshList("wxy/wf", 20)[0], count: "10", path: "abfresh/wxy/wf" },
-                { id: "WXYBar", title: "Night Life", cover: genWXYList("bar/ba", 10)[1] , count: "10", path: "abwxy/bar/ba" },
-                { id: "WXYLace", title: "Seductive Lace", cover: genWXYList("lace/la", 10)[2] , count: "10", path: "abwxy/lace/la" },
-                { id: "WXYSpa", title: "Sultry Spaghetti Straps", cover: genWXYList("spaghetti/sp", 10)[0], count: "10", path: "abwxy/spaghetti/sp" },
+                { id: "WXYwf1", title: "Fresh & Trending", cover: genFreshList("wxy/wf", 20)[0], count: "10",               path: "abfresh/wxy/wf" },
+                { id: "WXYBar", title: "Night Life", cover: genWXYList("bar/ba", 10)[1] , count: "10",                      path: "abwxy/bar/ba" },
+                { id: "WXYLace", title: "Seductive Lace", cover: genWXYList("lace/la", 10)[2] , count: "10",                path: "abwxy/lace/la" },
+                { id: "WXYSpa", title: "Sultry Spaghetti Straps", cover: genWXYList("spaghetti/sp", 10)[0], count: "10",    path: "abwxy/spaghetti/sp" },
                 { id: "WXYBed", title: "Cozy & Seductive Moments", cover: genWXYList("bedbathsofa/be", 10)[0], count: "10", path: "abwxy/bedbathsofa/be" },
-                { id: "WXYChe", title: "Elegant in Cheongsam", cover: genWXYList("cheongsam/ch", 10)[0], count: "10", path: "abwxy/cheongsam/ch" },
-                { id: "WXYCro", title: "Sassy in Croptops", cover: genWXYList("croptop/cr", 10)[0], count: "10", path: "abwxy/croptop/cr" },
-                { id: "WXYDec", title: "Sublime Décolleté", cover: genWXYList("decollete/de", 10)[0], count: "10", path: "abwxy/decollete/de" },
-                { id: "WXYHal", title: "Allure en Halter", cover: genWXYList("haltertop/ha", 10)[0], count: "10", path: "abwxy/haltertop/ha" },
-                { id: "WXYNight", title: "Nocturne in New York", cover: genWXYList("nightnewyork/ni", 10)[0], count: "10", path: "nightnewyork/ni" },
-                { id: "WXYOffice", title: "Chic at Work", cover: genWXYList("office/ni", 10)[0], count: "10", path: "nightNewYork/ni" },
-                { id: "WXYOut", title: "Breeze & Beyond", cover: genWXYList("outdoor/ou", 10)[0], count: "10", path: "outdoor/ou" },
-                { id: "WXYPants", title: "Chic in Motion", cover: genWXYList("pants/pa", 10)[0], count: "10", path: "abwxy/pants/pa" },
+                { id: "WXYChe", title: "Elegant in Cheongsam", cover: genWXYList("cheongsam/ch", 10)[0], count: "10",       path: "abwxy/cheongsam/ch" },
+                { id: "WXYCro", title: "Sassy in Croptops", cover: genWXYList("croptop/cr", 10)[0], count: "10",            path: "abwxy/croptop/cr" },
+                { id: "WXYDec", title: "Sublime Décolleté", cover: genWXYList("decollete/de", 10)[0], count: "10",          path: "abwxy/decollete/de" },
+                { id: "WXYHal", title: "Allure en Halter", cover: genWXYList("haltertop/ha", 10)[0], count: "10",           path: "abwxy/haltertop/ha" },
+                { id: "WXYNight", title: "Nocturne in New York", cover: genWXYList("nightnewyork/ni", 10)[0], count: "10",  path: "abwxy/nightnewyork/ni" },
+                { id: "WXYOffice", title: "Chic at Work", cover: genWXYList("office/of", 10)[0], count: "10",               path: "abwxy/office/of" },
+                { id: "WXYOut", title: "Breeze & Beyond", cover: genWXYList("outdoor/ou", 10)[0], count: "10",              path: "abwxy/outdoor/ou" },
+                { id: "WXYPants", title: "Chic in Motion", cover: genWXYList("pants/pa", 10)[0], count: "10",               path: "abwxy/pants/pa" },
             ]);
 
 
         } else if (itemid === 'kele') {
             setCategories([
-                { id: "KELEkf1", title: "Fresh & Trending", cover: genFreshList("kele/kf", 20)[0] },
-                { id: "KELEChe", title: "cheongsam white", cover: genKeleList("cheongsam_white/che", 10)[1] },
-                { id: "KELEFlo", title: "red floral", cover: genKeleList("floral_red/flo", 10)[2] },
-                { id: "KELESpa", title: "spaghetti strap", cover: genKeleList("spaghetti_strap/spa", 10)[3] },
+                { id: "KELEkf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("kele/kf", 20)[0], count: "10",       path: "abfresh/kele/kf" },
+                { id: "KELEBat", title: "Dreamy Comfort & Sensual Retreats", cover: genKeleList("bathbedsofa/ba", 10)[0], count: "10",           path: "abkele/bathbedsofa/ba" },
+                { id: "KELEChe", title: "Timeless Grace in Silk & Lace",  cover: genKeleList("cheongsam/ch", 10)[2],  count: "10",  path: "abkele/cheongsam/ch" },
+                { id: "KELEFlo", title: "Whimsical Blooms & Petal Charms", cover: genKeleList("floral/fl", 10)[1],  count: "10",    path: "abkele/floral/fl" },
+                { id: "KELEHome", title: "Cozy Chic & Homely Elegance", cover: genKeleList("home/ho", 10)[0], count: "10",           path: "abkele/home/ho" },
+                { id: "KELEOffice", title: "Power & Poise in the Workplace",  cover: genKeleList("office/of", 10)[2],  count: "10",  path: "abkele/office/of" },
+                { id: "KELESofa", title: "Lounge in Luxe & Leisure", cover: genKeleList("sofa/so", 10)[1],  count: "10",                path: "abkele/sofa/so" },
+                { id: "KELESto", title: "Silken Allure & Enchanting Legs", cover: genKeleList("stockings/st", 10)[0], count: "10",           path: "abkele/stockings/st" },
+            ]);
+
+        } else if (itemid === 'anran') {
+            setCategories([
+                { id: "ANRANaf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("anran/af", 20)[0], count: "10",       path: "abfresh/anran/af" },
+                { id: "ANRANClass", title: "Scholarly Chic & Study Glam",  cover: genKeleList("classroom/cl", 10)[2],  count: "10",  path: "abanran/classroom/cl" },
+                { id: "ANRANHotel", title: "Luxe Escapes & Midnight Whispers", cover: genKeleList("hotel/ho", 10)[1],  count: "10",    path: "abanran/hotel/ho" },
+                { id: "ANRANDenim", title: "Casual Chic in Denim", cover: genKeleList("demins/de", 10)[0], count: "10",           path: "abanran/demins/de" },
+                { id: "ANRANOffice", title: "Power & Poise in the Workplace",  cover: genKeleList("office/of", 10)[2],  count: "10",  path: "abanran/office/of" },
+                { id: "ANRANSto", title: "Silken Allure & Enchanting Legs", cover: genKeleList("stockings/st", 10)[0], count: "10",           path: "abanran/stockings/st" },
             ]);
 
         } else if (itemid === 'xlz') {
             setCategories([
-                { id: "XLZxf1", title: "Fresh & Trending", cover: genFreshList("xlz/xf", 20)[0] },
-                { id: "XLZSpa", title: "purple spaghetti", cover: genXLZList("purplespaghetti/spa", 10)[1] },
-                { id: "XLZLace", title: "lace", cover: genXLZList("lace/lace", 10)[2] },
-                { id: "XLZPro", title: "professional", cover: genXLZList("professional/pro", 10)[4] },
+                { id: "XLZxf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("xlz/xf", 20)[0], count: "10",       path: "abfresh/xlz/xf" },
+                { id: "XLZBed", title: "Cozy & Seductive Moments", cover: genXLZList("bedbathsofa/be", 10)[0], count: "10", path: "abxlz/bedbathsofa/be" },
+                { id: "XLZOffice", title: "Power & Poise in the Workplace",  cover: genKeleList("office/of", 10)[2],  count: "10",  path: "abxlz/office/of" },
+
+                { id: "XLZSee", title: "Ethereal Elegance & Sheer Temptation",  cover: genKeleList("seethrough/se", 10)[2],  count: "10",  path: "abxlz/seethrough/se" },
+                { id: "XLZSpa", title: "Luxe Escapes & Midnight Whispers", cover: genKeleList("hotel/ho", 10)[1],  count: "10",    path: "abxlz/hotel/ho" },
+                { id: "XLZSto", title: "Silken Allure & Enchanting Legs", cover: genKeleList("stockings/st", 10)[0], count: "10",           path: "abxlz/stockings/st" },
             ]);
         } else if (itemid === 'others') {
             setCategories([

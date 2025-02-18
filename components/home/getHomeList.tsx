@@ -13,6 +13,11 @@ const lxlHomeCover = genCatCoverList("lxl/lc", 10);
 const anranHomeCover=genCatCoverList("anran/ac", 10);
 const cccHomeCover = genCatCoverList("ccc/cc", 10);
 
+const holidayHomeCover = genCatCoverList("holiday/hc", 10);
+const specialHomeCover = genCatCoverList("special/sc", 10);
+const sceneHomeCover = genCatCoverList("ccc/cc", 10);
+
+
 const HomeList: Cate[] = [
     { id: "ycc", title: "Yang Chenchen \n Yome Sugar 杨晨晨",shorttitle:"Yang Chenchen", cover: yccHomeCover[0] },
     { id: "syz", title: "Son Yoon Joo \n 손윤주 孙允珠",     shorttitle:"Son Yoon Joo",  cover: syzHomeCover[0] },
@@ -23,7 +28,9 @@ const HomeList: Cate[] = [
     { id: "ccc", title: "Cheng Chengcheng 程程程", shorttitle:"Cheng Chengcheng", cover: cccHomeCover[0] },
     { id: "dxy", title: "Du Xiaoyu 杜小雨",        shorttitle:"Du Xiaoyu",        cover: dxyHomeCover[0] },
     { id: "lxl", title: "Lin Xinglan 林星阑",      shorttitle:"Lin Xinglan",      cover: lxlHomeCover[0] },
-    { id: "others", title: "and More...",         shorttitle:"and More...",      cover: othersHomeCover[0] },
+    { id: "holiday", title: "Holidays",               shorttitle:"Holidays",      cover: holidayHomeCover[0] },
+    { id: "special", title: "Special Taste",          shorttitle:"Special Taste", cover: specialHomeCover[0] },
+    { id: "others", title: "and More...",         shorttitle:"and More...",   cover: othersHomeCover[0] },
 ] as const;
 
 export default HomeList;
