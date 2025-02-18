@@ -42,23 +42,33 @@ const CategoryScreen: React.FC = () => {
             ]);
 
 
-
         } else if (itemid === 'syz') {
             setCategories([
                 { id: "SYZsf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("syz/sf", 20)[0], count: "10", path: "abfresh/syz/sf" },
                 { id: "SYZStr", title: "Bare & Beautiful", cover: genSYZList("strapless/st", 10)[0], count: "10", path: "absyz/strapless/st" },
-                { id: "SYZSpa", title: "Sultry Spaghetti Straps",  cover: genSYZList("spaghetti/spa", 10)[2],  count: "10", path: "spaghetti/sp" },
+                { id: "SYZSpa", title: "Sultry Spaghetti Straps",  cover: genSYZList("spaghetti/sp", 10)[2],  count: "10", path: "spaghetti/sp" },
                 { id: "SYZLace", title: "Seductive Lace", cover: genSYZList("lace/la", 10)[1],  count: "10", path: "lace/la" },
             ]);
 
 
         } else if (itemid === 'wxy') {
             setCategories([
-                { id: "WXYwf1", title: "Fresh & Trending", cover: genFreshList("wxy/wf", 20)[0] },
-                { id: "WXYBar", title: "Night Life", cover: genWXYList("bar/bar", 10)[1] },
-                { id: "WXYLace", title: "Seductive Lace", cover: genWXYList("lace/lace", 10)[2] },
-                { id: "WXYSpa", title: "Sultry Spaghetti Straps", cover: genWXYList("spaghetti/spa", 10)[3] },
+                { id: "WXYwf1", title: "Fresh & Trending", cover: genFreshList("wxy/wf", 20)[0], count: "10", path: "abfresh/wxy/wf" },
+                { id: "WXYBar", title: "Night Life", cover: genWXYList("bar/ba", 10)[1] , count: "10", path: "abwxy/bar/ba" },
+                { id: "WXYLace", title: "Seductive Lace", cover: genWXYList("lace/la", 10)[2] , count: "10", path: "abwxy/lace/la" },
+                { id: "WXYSpa", title: "Sultry Spaghetti Straps", cover: genWXYList("spaghetti/sp", 10)[0], count: "10", path: "abwxy/spaghetti/sp" },
+                { id: "WXYBed", title: "Cozy & Seductive Moments", cover: genWXYList("bedbathsofa/be", 10)[0], count: "10", path: "abwxy/bedbathsofa/be" },
+                { id: "WXYChe", title: "Elegant in Cheongsam", cover: genWXYList("cheongsam/ch", 10)[0], count: "10", path: "abwxy/cheongsam/ch" },
+                { id: "WXYCro", title: "Sassy in Croptops", cover: genWXYList("croptop/cr", 10)[0], count: "10", path: "abwxy/croptop/cr" },
+                { id: "WXYDec", title: "Sublime Décolleté", cover: genWXYList("decollete/de", 10)[0], count: "10", path: "abwxy/decollete/de" },
+                { id: "WXYHal", title: "Allure en Halter", cover: genWXYList("haltertop/ha", 10)[0], count: "10", path: "abwxy/haltertop/ha" },
+                { id: "WXYNight", title: "Nocturne in New York", cover: genWXYList("nightnewyork/ni", 10)[0], count: "10", path: "nightnewyork/ni" },
+                { id: "WXYOffice", title: "Chic at Work", cover: genWXYList("office/ni", 10)[0], count: "10", path: "nightNewYork/ni" },
+                { id: "WXYOut", title: "Breeze & Beyond", cover: genWXYList("outdoor/ou", 10)[0], count: "10", path: "outdoor/ou" },
+                { id: "WXYPants", title: "Chic in Motion", cover: genWXYList("pants/pa", 10)[0], count: "10", path: "abwxy/pants/pa" },
             ]);
+
+
         } else if (itemid === 'kele') {
             setCategories([
                 { id: "KELEkf1", title: "Fresh & Trending", cover: genFreshList("kele/kf", 20)[0] },
