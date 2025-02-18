@@ -4,4 +4,6 @@ export interface Cate {
     shorttitle?: string;
     route?: string;
     cover?: string;
+    count?: string;
+    path?: string;
 }

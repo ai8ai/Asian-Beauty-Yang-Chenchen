@@ -25,56 +25,61 @@ const CategoryScreen: React.FC = () => {
         if (itemid === 'ycc') {
             console.log("CatScreen received itemid:", itemid);  // Log itemid to console
             setCategories([
-                { id: "YCCyf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("ycc/yf", 20)[0] },
-                { id: "YCCPure", title: "Angelically Innocent", cover: genYCCList("pure/pu", 10)[0] },
-                { id: "YCCSpa", title: "Sultry Spaghetti Straps", cover: genYCCList("spaghetti/sp", 10)[0] },
-                { id: "YCCChe", title: "Elegant in Cheongsam", cover: genYCCList("cheongsam/ch", 10)[0] },
-                { id: "YCCStr", title: "Bare & Beautiful", cover: genYCCList("strapless/st", 10)[0] },
-                { id: "YCCBed", title: "Cozy & Seductive Moments", cover: genYCCList("bedbathsofa/be", 10)[0] },
-                { id: "YCCSeq", title: "Dazzling in Sequins", cover: genYCCList("sequins/se", 10)[0] },
-                { id: "YCCBlue", title: "Mystic in Blue", cover: genYCCList("blue/bl", 10)[0] },
-                { id: "YCCFlo", title: "Flirty Floral Charms", cover: genYCCList("floralskirt/fl", 10)[0] },
-                { id: "YCCGlass", title: "Sensual in Glasses", cover: genYCCList("glass/gl", 10)[0] },
-                { id: "YCCGreen", title: "Enchanting in Green", cover: genYCCList("green/gr", 10)[0] },
-                { id: "YCCDenim", title: "Casual Chic in Denim", cover: genYCCList("denim/de", 10)[0] },
-                { id: "YCCPink", title: "Pretty in Pink", cover: genYCCList("pinkgirl/pi", 10)[0] },
-                { id: "YCCCos", title: "Fantasy & Cosplay Queens", cover: genYCCList("cosplay/co", 10)[0] },
+                { id: "YCCyf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("ycc/yf", 20)[0], count: "10", path: "abfresh/ycc/yf" },
+                { id: "YCCPure", title: "Angelically Innocent", cover: genYCCList("pure/pu", 5)[0], count: "10", path: "abycc/pure/pu" },
+                { id: "YCCSpa", title: "Sultry Spaghetti Straps", cover: genYCCList("spaghetti/sp", 10)[0], count: "10", path: "abycc/spaghetti/sp" },
+                { id: "YCCChe", title: "Elegant in Cheongsam", cover: genYCCList("cheongsam/ch", 10)[0], count: "10", path: "abycc/cheongsam/ch" },
+                { id: "YCCStr", title: "Bare & Beautiful", cover: genYCCList("strapless/st", 10)[0], count: "10", path: "abycc/cheongsam/ch" },
+                { id: "YCCBed", title: "Cozy & Seductive Moments", cover: genYCCList("bedbathsofa/be", 10)[0], count: "10", path: "abycc/bedbathsofa/be" },
+                { id: "YCCSeq", title: "Dazzling in Sequins", cover: genYCCList("sequins/se", 10)[0], count: "10", path: "abycc/sequins/se" },
+                { id: "YCCBlue", title: "Mystic in Blue", cover: genYCCList("blue/bl", 10)[0], count: "10", path: "abycc/blue/bl" },
+                { id: "YCCFlo", title: "Flirty Floral Charms", cover: genYCCList("floralskirt/fl", 10)[0], count: "10", path: "abycc/floralskirt/fl" },
+                { id: "YCCGlass", title: "Sensual in Glasses", cover: genYCCList("glass/gl", 10)[0], count: "10", path: "abycc/glass/gl" },
+                { id: "YCCGreen", title: "Enchanting in Green", cover: genYCCList("green/gr", 10)[0], count: "10", path: "abycc/green/gr" },
+                { id: "YCCDenim", title: "Casual Chic in Denim", cover: genYCCList("denim/de", 10)[0], count: "10", path: "abycc/denim/de" },
+                { id: "YCCPink", title: "Pretty in Pink", cover: genYCCList("pinkgirl/pi", 10)[0], count: "10", path: "abycc/pinkgirl/pi" },
+                { id: "YCCCos", title: "Fantasy & Cosplay Queens", cover: genYCCList("cosplay/co", 10)[0], count: "10", path: "abycc/cosplay/co" },
             ]);
+
+
 
         } else if (itemid === 'syz') {
             setCategories([
-                { id: "SYZsf1", title: "Fresh & Trending", cover: genFreshList("syz/sf", 20)[0] },
-                { id: "SYZStr", title: "strapless top", cover: genSYZList[1] },
-                { id: "SYZSpa", title: "spaghetti strap", cover: syzCatCover[2] },
-                { id: "SYZLace", title: "lace", cover: syzCatCover[3] },
+                { id: "SYZsf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("syz/sf", 20)[0], count: "10", path: "abfresh/syz/sf" },
+                { id: "SYZStr", title: "Bare & Beautiful", cover: genSYZList("strapless/st", 10)[0], count: "10", path: "absyz/strapless/st" },
+                { id: "SYZSpa", title: "Sultry Spaghetti Straps",  cover: genSYZList("spaghetti/spa", 10)[2],  count: "10", path: "spaghetti/sp" },
+                { id: "SYZLace", title: "Seductive Lace", cover: genSYZList("lace/la", 10)[1],  count: "10", path: "lace/la" },
             ]);
+
+
         } else if (itemid === 'wxy') {
             setCategories([
                 { id: "WXYwf1", title: "Fresh & Trending", cover: genFreshList("wxy/wf", 20)[0] },
-                { id: "WXYBar", title: "bar", cover: wxyCatCover[1] },
-                { id: "WXYLace", title: "lace", cover: wxyCatCover[2] },
-                { id: "WXYSpa", title: "spaghetti strap", cover: wxyCatCover[3] },
+                { id: "WXYBar", title: "Night Life", cover: genWXYList("bar/bar", 10)[1] },
+                { id: "WXYLace", title: "Seductive Lace", cover: genWXYList("lace/lace", 10)[2] },
+                { id: "WXYSpa", title: "Sultry Spaghetti Straps", cover: genWXYList("spaghetti/spa", 10)[3] },
             ]);
         } else if (itemid === 'kele') {
             setCategories([
                 { id: "KELEkf1", title: "Fresh & Trending", cover: genFreshList("kele/kf", 20)[0] },
-                { id: "KELEChe", title: "cheongsam white", cover: keleCatCover[1] },
-                { id: "KELEFlo", title: "red floral", cover: keleCatCover[2] },
-                { id: "KELESpa", title: "spaghetti strap", cover: keleCatCover[3] },
+                { id: "KELEChe", title: "cheongsam white", cover: genKeleList("cheongsam_white/che", 10)[1] },
+                { id: "KELEFlo", title: "red floral", cover: genKeleList("floral_red/flo", 10)[2] },
+                { id: "KELESpa", title: "spaghetti strap", cover: genKeleList("spaghetti_strap/spa", 10)[3] },
             ]);
+
         } else if (itemid === 'xlz') {
             setCategories([
                 { id: "XLZxf1", title: "Fresh & Trending", cover: genFreshList("xlz/xf", 20)[0] },
-                { id: "XLZSpa", title: "purple spaghetti", cover: xlzCatCover[1] },
-                { id: "XLZLace", title: "lace", cover: xlzCatCover[2] },
-                { id: "XLZPro", title: "professional", cover: xlzCatCover[4] },
+                { id: "XLZSpa", title: "purple spaghetti", cover: genXLZList("purplespaghetti/spa", 10)[1] },
+                { id: "XLZLace", title: "lace", cover: genXLZList("lace/lace", 10)[2] },
+                { id: "XLZPro", title: "professional", cover: genXLZList("professional/pro", 10)[4] },
             ]);
         } else if (itemid === 'others') {
             setCategories([
                 { id: "OTHERSof1", title: "Fresh & Trending", cover: genFreshList("others/of", 20)[0] },
-                { id: "OTHERSStu", title: "student w glass", cover: othersCatCover[1] },
-                { id: "OTHERSGreen", title: "green", cover: othersCatCover[2] },
-                { id: "OTHERSMid", title: "middle age", cover: othersCatCover[3] },
+                { id: "OTHERSStu", title: "student w glass", cover: genOthersList("student/stu", 10)[1] },
+                { id: "OTHERSGreen", title: "green", cover: genOthersList("green/green", 10)[2] },
+                { id: "OTHERSMid", title: "middle age", cover: genOthersList("middleage/mid", 10)[3] },
             ]);
         } else {
             setCategories([
@@ -116,7 +121,14 @@ const CategoryScreen: React.FC = () => {
                 renderItem={({ item }) => (
                     <TouchableOpacity
                         style={styles.galleryItemContainer}
-                        onPress={() => router.push({ pathname: "/cat2img", params: { itemid: item.id, title: item.title } })}
+                        onPress={() => router.push({
+                            pathname: "/cat2img", params: {
+                                itemid: item.id, 
+                                title: item.title,
+                                path: item.path,
+                                count: item.count,
+                            }
+                        })}
                     >
                         <Image source={{ uri: item.cover }} style={styles.galleryItemImage} />
                         <Text style={styles.galleryItemTitle} numberOfLines={2}>
