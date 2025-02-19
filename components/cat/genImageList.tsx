@@ -7,6 +7,7 @@
  * ["https://ai8ai.github.io/abcat/dxy/dc1.jpg", ..., "https://ai8ai.github.io/abcat/dxy/dc1000.jpg"]
  */
 
+const BASE_URL = "https://ai8ai.github.io/";
 const BASE_URL_CAT = "https://ai8ai.github.io/abcat/";
 const BASE_URL_FRESH = "https://ai8ai.github.io/abfresh/";
 
@@ -21,8 +22,6 @@ const BASE_URL_CCC = "https://ai8ai.github.io/abccc/";
 const BASE_URL_DXY = "https://ai8ai.github.io/abdxy/";
 const BASE_URL_LXL = "https://ai8ai.github.io/ablxl/";
 const BASE_URL_HOLIDAY = "https://ai8ai.github.io/abholiday/";
-// const BASE_URL_ = "https://ai8ai.github.io/ab/";
-// const BASE_URL_ = "https://ai8ai.github.io/ab/";
 // const BASE_URL_ = "https://ai8ai.github.io/ab/";
 // const BASE_URL_ = "https://ai8ai.github.io/ab/";
 // const BASE_URL_ = "https://ai8ai.github.io/ab/";
@@ -48,6 +47,8 @@ export const genCatCoverList = (path: string, count: number): string[] =>
 export const genFreshList = (path: string, count: number): string[] =>
     Array.from({ length: count }, (_, i) => `${BASE_URL_FRESH}${path}${i + 1}.jpg`).sort(() => Math.random() - 0.5);
 
+export const genImgList = (path: string, count: number): string[] =>
+    Array.from({ length: count }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`).sort(() => Math.random() - 0.5);
 
 
 export const genYCCList = (path: string, count: number): string[] =>

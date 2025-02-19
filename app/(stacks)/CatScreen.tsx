@@ -4,7 +4,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import styles from '@/styles/styles';
 import { Cate } from '@/types';
 
-import {genHolidayList, genFreshList, genCCCList, genDXYList, genLXLList, genYCCList, genSYZList, genWXYList, genKeleList, genOthersList, genXLZList, genAnranList } from '@/components/cat/genImageList'
+import { genHolidayList, genImgList, genFreshList, genCCCList, genDXYList, genLXLList, genYCCList, genSYZList, genWXYList, genKeleList, genOthersList, genXLZList, genAnranList } from '@/components/cat/genImageList'
 
 const CategoryScreen: React.FC = () => {
     const [categories, setCategories] = useState<Cate[]>([]);
@@ -119,9 +119,7 @@ const CategoryScreen: React.FC = () => {
                 { id: "LXLChe", title: "Elegant in Cheongsam", cover: genLXLList("cheongsam/ch", 10)[0], count: "10", path: "ablxl/cheongsam/ch" },
                 { id: "LXLFish", title: "Night Life", cover: genLXLList("fishdress/fi", 10)[1], count: "10", path: "ablxl/fishdress/fi" },
                 { id: "LXLOffice", title: "Chic at Work", cover: genLXLList("office/of", 10)[0], count: "10", path: "ablxl/office/of" },
-
                 { id: "LXLPencil", title: "Seductive Pencil", cover: genLXLList("pencilskirt/pe", 10)[2], count: "10", path: "ablxl/pencilskirt/pe" },
-
                 { id: "LXLSpa", title: "Sultry Spaghetti Straps", cover: genLXLList("spaghetti/sp", 10)[0], count: "10", path: "ablxl/spaghetti/sp" },
                 { id: "LXLStr", title: "Chic in Motion", cover: genLXLList("strapless/st", 10)[0], count: "10", path: "ablxl/strapless/st" },
             ]);
@@ -135,10 +133,17 @@ const CategoryScreen: React.FC = () => {
                 { id: "OTHERSGreen", title: "green", cover: genOthersList("green/green", 5)[2], count: "10", path: "abothers/green/green" },
                 { id: "OTHERSMid", title: "middle age", cover: genOthersList("middleage/mid", 5)[3], count: "10", path: "abothers/middleage/mid" },
             ]);
-            
-        } else if (itemid === 'hol') {
+
+        } else if (itemid === 'special') {
             setCategories([
-                { id: "HolidayLu", title: "Chinese New Year",  cover: genHolidayList("luneryear/lu", 10)[0], count: "30", path: "abholiday/luneryear/lu" },
+                { id: "SpecialBack", title: "Elegance from Behind", cover: genImgList("abspecialtaste/back/ba", 10)[0], path: "abspecialtaste/back/ba", count: "10" },
+                { id: "SpecialFinger", title: "Graceful Fingertips", cover: genImgList("abspecialtaste/finger/fi", 10)[0], path: "abspecialtaste/finger/fi", count: "10" },
+                { id: "SpecialButt", title: "Curves & Confidence", cover: genImgList("abspecialtaste/butt/bu", 10)[0], path: "abspecialtaste/butt/bu", count: "10" },
+                { id: "SpecialLeg", title: "Poise in Every Step", cover: genImgList("abspecialtaste/legfeet/le", 10)[0], path: "abspecialtaste/legfeet/le", count: "10" },
+            ]);
+        } else if (itemid === 'holiday') {
+            setCategories([
+                { id: "HolidayLu", title: "Chinese New Year", cover: genHolidayList("luneryear/lu", 10)[0], count: "30", path: "abholiday/luneryear/lu" },
             ]);
         } else {
             setCategories([
