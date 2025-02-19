@@ -2,7 +2,7 @@
     "expo": {
         "name": "Asian Beauty",
         "slug": "asianbeauty-ycc",
-        "version": "2.2.2",
+        "version": "2.2.5",
         "orientation": "portrait",
         "icon": "./assets/images/icon.png",
         "scheme": "myapp",
