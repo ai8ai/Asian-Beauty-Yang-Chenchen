@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { View, ActivityIndicator, Animated, Pressable, Modal, Text, TextInput, Button } from 'react-native';
+import { View, ActivityIndicator, Animated, Pressable, Modal, Text, TextInput, Button, Image } from 'react-native';
 import styles from '@/styles/styles';
 import { StatusBar } from 'expo-status-bar';
+import * as MediaLibrary from 'expo-media-library';
+import * as FileSystem from 'expo-file-system';
 
 import { AnimationType, getAnimationStyle } from '@/utils/animationStyles';
 import useScaleAnimation from '@/hooks/useAnimations';
@@ -15,14 +17,23 @@ interface SlideshowYccProps {
 const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [animationType, setAnimationType] = useState<AnimationType>(AnimationType.Scale);
+    const [hasPermission, setHasPermission] = useState<boolean | null>(null);
 
     const { scaleAnim, animateImageChange } = useScaleAnimation();
     const { savedIntervalValue, intervalInput, handleIntervalChange, saveInterval, intervalDuration } = useInterval();
     const { modalVisible, setModalVisible } = useModalActions(images, currentIndex, () => {});
 
+    // Request permissions once when the component mounts
+    useEffect(() => {
+        (async () => {
+            const { status } = await MediaLibrary.requestPermissionsAsync();
+            setHasPermission(status === 'granted');
+        })();
+    }, []);
+
     useEffect(() => {
         if (images.length === 0) return;
-    
+
         const animationSequence = [
             AnimationType.Scale,
             AnimationType.Zoom,
@@ -32,20 +43,39 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
             AnimationType.Bounce,
             AnimationType.Wobble,
             AnimationType.Flip,
-        ]; // Define your animation order
-    
+        ];
+
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => {
                 const newIndex = (prevIndex + 1) % images.length;
                 const nextAnimation = animationSequence[newIndex % animationSequence.length];
-                setAnimationType(nextAnimation); // Update animation type
+                setAnimationType(nextAnimation);
                 animateImageChange(() => setCurrentIndex(newIndex));
                 return newIndex;
             });
         }, intervalDuration);
-    
+
         return () => clearInterval(interval);
     }, [images, animateImageChange, intervalDuration]);
+
+    const savePicture = async () => {
+        if (hasPermission === false) {
+            alert('Permission denied. Please enable it in settings.');
+            return;
+        }
+
+        try {
+            const uri = images[currentIndex];
+            const fileUri = FileSystem.documentDirectory + `image_${Date.now()}.jpg`;
+            await FileSystem.downloadAsync(uri, fileUri);
+
+            // Save the image to the library
+            await MediaLibrary.saveToLibraryAsync(fileUri);
+            alert('Image saved successfully!');
+        } catch (error) {
+            alert('Failed to save image.');
+        }
+    };
 
     if (images.length === 0) {
         return <ActivityIndicator style={styles.loading} size="large" color="#000" />;
@@ -55,7 +85,7 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
         <View style={styles.imageContainer}>
             <Animated.View style={[styles.image, getAnimationStyle(animationType, scaleAnim)]}>
                 <Pressable onPress={() => setModalVisible(true)}>
-                    <Animated.Image source={{ uri: images[currentIndex] }} style={styles.image} />
+                    <Image source={{ uri: images[currentIndex] }} style={styles.image} />
                 </Pressable>
             </Animated.View>
 
@@ -72,6 +102,7 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
                             />
                             <Button title="Save" onPress={() => { saveInterval(); setModalVisible(false); }} />
                         </View>
+                        <Button title="Save Picture" onPress={savePicture} />
                     </View>
                     <StatusBar style="light" translucent />
                 </View>

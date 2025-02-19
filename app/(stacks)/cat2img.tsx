@@ -2,7 +2,7 @@
 import React, {useState, useEffect, useMemo  } from 'react';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
-import Slideshow from '@/components/SlideshowOnline';
+import Slideshow from '@/components/Slideshow';
 const BASE_URL = "https://ai8ai.github.io/";
 
 
@@ -20,7 +20,7 @@ const Cat2Img = () => {
         const numCount = parseInt(count || '0', 10); // 10 is radix , not a number 10
         if (!path) {            return ["fff-path"];        }
         if ( isNaN(numCount) || numCount <= 0) return ["fff-numCount"];
-        return Array.from({ length: numCount }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`);
+        return Array.from({ length: numCount }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`).sort(() => Math.random() - 0.5);
     }, [path, count]);
     
     console.log("-------- Generated imageList:", imageList);
