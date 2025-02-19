@@ -14,7 +14,7 @@ interface SlideshowYccProps {
 
 const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [animationType] = useState<AnimationType>(AnimationType.Scale); // Keep animation consistent
+    const [animationType, setAnimationType] = useState<AnimationType>(AnimationType.Scale);
 
     const { scaleAnim, animateImageChange } = useScaleAnimation();
     const { savedIntervalValue, intervalInput, handleIntervalChange, saveInterval, intervalDuration } = useInterval();
@@ -22,15 +22,28 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
 
     useEffect(() => {
         if (images.length === 0) return;
-
+    
+        const animationSequence = [
+            AnimationType.Scale,
+            AnimationType.Zoom,
+            AnimationType.Fade,
+            AnimationType.Slide,
+            AnimationType.Rotate,
+            AnimationType.Bounce,
+            AnimationType.Wobble,
+            AnimationType.Flip,
+        ]; // Define your animation order
+    
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => {
                 const newIndex = (prevIndex + 1) % images.length;
+                const nextAnimation = animationSequence[newIndex % animationSequence.length];
+                setAnimationType(nextAnimation); // Update animation type
                 animateImageChange(() => setCurrentIndex(newIndex));
                 return newIndex;
             });
         }, intervalDuration);
-
+    
         return () => clearInterval(interval);
     }, [images, animateImageChange, intervalDuration]);
 

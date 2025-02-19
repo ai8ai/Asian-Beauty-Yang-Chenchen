@@ -131,13 +131,14 @@ const CategoryScreen: React.FC = () => {
         } else if (itemid === 'others') {
             setCategories([
                 { id: "OTHERSof1", title: "Fresh & Trending", cover: genFreshList("others/of", 20)[0], count: "10", path: "abfresh/others/of" },
-                { id: "OTHERSStu", title: "student w glass", cover: genOthersList("student/stu", 5)[1], count: "5", path: "abothers/student/stu" },
-                { id: "OTHERSGreen", title: "green", cover: genOthersList("green/green", 5)[2], count: "5", path: "abothers/green/green" },
-                { id: "OTHERSMid", title: "middle age", cover: genOthersList("middleage/mid", 5)[3], count: "5", path: "abothers/middleage/mid" },
+                { id: "OTHERSStu", title: "student w glass", cover: genOthersList("student/stu", 5)[1], count: "10", path: "abothers/student/stu" },
+                { id: "OTHERSGreen", title: "green", cover: genOthersList("green/green", 5)[2], count: "10", path: "abothers/green/green" },
+                { id: "OTHERSMid", title: "middle age", cover: genOthersList("middleage/mid", 5)[3], count: "10", path: "abothers/middleage/mid" },
             ]);
-        } else if (itemid === 'holiday') {
+            
+        } else if (itemid === 'hol') {
             setCategories([
-                { id: "HolidayLu", title: "Chinese New Year",  cover: genHolidayList("luneryear/lu", 10)[1], count: "5", path: "abholiday/luneryear/lu" },
+                { id: "HolidayLu", title: "Chinese New Year",  cover: genHolidayList("luneryear/lu", 10)[0], count: "30", path: "abholiday/luneryear/lu" },
             ]);
         } else {
             setCategories([

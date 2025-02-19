@@ -14,11 +14,12 @@ const Cat2Img = () => {
     const catId =Array.isArray(par.itemid) ? par.itemid[0] : par.itemid;
     const path = Array.isArray(par.path) ? par.path[0] : par.path;
     const count = Array.isArray(par.count) ? par.count[0] : par.count;
-    console.log(catId + '  ' + path + '  '+ count)
 
     const imageList = useMemo(() => {
-        const numCount = parseInt(count || '0', 5);
-        if (!path || isNaN(numCount) || numCount <= 0) return [];
+        // console.log(catId + '  ' + path + '  '+ count)
+        const numCount = parseInt(count || '0', 10); // 10 is radix , not a number 10
+        if (!path) {            return ["fff-path"];        }
+        if ( isNaN(numCount) || numCount <= 0) return ["fff-numCount"];
         return Array.from({ length: numCount }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`);
     }, [path, count]);
     
