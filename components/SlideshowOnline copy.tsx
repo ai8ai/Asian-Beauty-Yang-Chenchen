@@ -9,30 +9,44 @@ import useInterval from '@/hooks/useInterval';
 import useModalActions from '@/hooks/useModalActions';
 
 interface SlideshowYccProps {
-    images: string[];
+    images: string[]; // Accept images array as a prop
 }
 
 const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [animationType] = useState<AnimationType>(AnimationType.Scale); // Keep animation consistent
+    const [firstImageLoaded, setFirstImageLoaded] = useState(false);
+    const [animationType, setAnimationType] = useState<AnimationType>(AnimationType.Scale);
 
     const { scaleAnim, animateImageChange } = useScaleAnimation();
     const { savedIntervalValue, intervalInput, handleIntervalChange, saveInterval, intervalDuration } = useInterval();
-    const { modalVisible, setModalVisible } = useModalActions(images, currentIndex, () => {});
+    const { modalVisible, setModalVisible, isIntervalInputVisible, setIsIntervalInputVisible, modalOptions } =
+        useModalActions(images, currentIndex, () => { });
 
     useEffect(() => {
-        if (images.length === 0) return;
+        if (images.length > 0 && !firstImageLoaded) {
+            setFirstImageLoaded(true);
+            const animationTypes = Object.values(AnimationType);
+            const randomAnimation = animationTypes[Math.floor(Math.random() * animationTypes.length)];
+            setAnimationType(randomAnimation);
+            animateImageChange(() => setCurrentIndex(0));
+        }
+    }, [images, firstImageLoaded, animateImageChange]);
 
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => {
-                const newIndex = (prevIndex + 1) % images.length;
+    useEffect(() => {
+        if (firstImageLoaded) {
+            const interval = setInterval(() => {
+                const newIndex = (currentIndex + 1) % images.length; // Cyclic index
+                const animationTypes = Object.values(AnimationType);
+                const randomAnimation = animationTypes[Math.floor(Math.random() * animationTypes.length)];
+                setAnimationType(randomAnimation);
                 animateImageChange(() => setCurrentIndex(newIndex));
-                return newIndex;
-            });
-        }, intervalDuration);
+            }, intervalDuration);
 
-        return () => clearInterval(interval);
-    }, [images, animateImageChange, intervalDuration]);
+            console.log(`Current image path: ${images[currentIndex]}`);
+
+            return () => clearInterval(interval);
+        }
+    }, [firstImageLoaded, images, animateImageChange, intervalDuration, currentIndex]);
 
     if (images.length === 0) {
         return <ActivityIndicator style={styles.loading} size="large" color="#000" />;
@@ -45,8 +59,12 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
                     <Animated.Image source={{ uri: images[currentIndex] }} style={styles.image} />
                 </Pressable>
             </Animated.View>
-
-            <Modal transparent animationType="slide" visible={modalVisible} onRequestClose={() => setModalVisible(false)}>
+            <Modal
+                transparent={true}
+                animationType="slide"
+                visible={modalVisible}
+                onRequestClose={() => setModalVisible(false)} // Handles Android back button
+            >
                 <View style={styles.modalContainer}>
                     <View style={styles.modalContent}>
                         <View style={styles.inputRow}>
@@ -62,9 +80,12 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
                     </View>
                     <StatusBar style="light" translucent />
                 </View>
+                <StatusBar style="light" translucent />
             </Modal>
             <StatusBar style="light" translucent />
+
         </View>
+
     );
 };
 
