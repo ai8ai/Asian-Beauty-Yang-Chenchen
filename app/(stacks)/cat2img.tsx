@@ -1,5 +1,5 @@
 // cat2img.tsx
-import React, { useEffect, useMemo  } from 'react';
+import React, {useState, useEffect, useMemo  } from 'react';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 
 import Slideshow from '@/components/SlideshowOnline';
@@ -11,6 +11,7 @@ const Cat2Img = () => {
     const parentNavi = navigation.getParent();
 
     const par = useLocalSearchParams();
+    const catId =Array.isArray(par.itemid) ? par.itemid[0] : par.itemid;
     const path = Array.isArray(par.path) ? par.path[0] : par.path;
     const count = Array.isArray(par.count) ? par.count[0] : par.count;
 

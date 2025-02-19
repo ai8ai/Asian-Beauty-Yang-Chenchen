@@ -3,8 +3,6 @@ import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from
 import { router, useLocalSearchParams } from 'expo-router';
 import styles from '@/styles/styles';
 import { Cate } from '@/types';
-import { useNavigation } from '@react-navigation/native';
-import { useNavigation as useNav } from 'expo-router';
 
 import { genFreshList, genCCCList, genDXYList, genLXLList, genYCCList, genSYZList, genWXYList, genKeleList, genOthersList, genXLZList, genAnranList } from '@/components/cat/genImageList'
 
@@ -14,11 +12,7 @@ const CategoryScreen: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
     // { id: "anran", title: "Anran 安然",            shorttitle:"Anran",            cover: anranHomeCover[0] },
     // { id: "kele", title: "Kele Vicky",             shorttitle:"Kele Vicky",    cover: keleHomeCover[0] },
-    const { itemid, itemtitle } = useLocalSearchParams();  // Get the itemid from route params
-
-    const navigation = useNavigation();
-    const nav = useNav();
-
+    const { itemid } = useLocalSearchParams();  // Get the itemid from route params
 
     useEffect(() => {
         if (itemid === 'ycc') {
@@ -135,6 +129,13 @@ const CategoryScreen: React.FC = () => {
 
 
         } else if (itemid === 'others') {
+            setCategories([
+                { id: "OTHERSof1", title: "Fresh & Trending", cover: genFreshList("others/of", 20)[0], count: "10", path: "abfresh/others/of" },
+                { id: "OTHERSStu", title: "student w glass", cover: genOthersList("student/stu", 5)[1], count: "5", path: "abothers/student/stu" },
+                { id: "OTHERSGreen", title: "green", cover: genOthersList("green/green", 5)[2], count: "5", path: "abothers/green/green" },
+                { id: "OTHERSMid", title: "middle age", cover: genOthersList("middleage/mid", 5)[3], count: "5", path: "abothers/middleage/mid" },
+            ]);
+        } else if (itemid === 'holiday') {
             setCategories([
                 { id: "OTHERSof1", title: "Fresh & Trending", cover: genFreshList("others/of", 20)[0], count: "10", path: "abfresh/others/of" },
                 { id: "OTHERSStu", title: "student w glass", cover: genOthersList("student/stu", 5)[1], count: "5", path: "abothers/student/stu" },
