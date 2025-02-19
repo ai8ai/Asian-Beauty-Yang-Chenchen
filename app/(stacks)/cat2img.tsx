@@ -18,7 +18,7 @@ const Cat2Img = () => {
     const imageList = useMemo(() => {
         const numCount = parseInt(count || '0', 5);
         if (!path || isNaN(numCount) || numCount <= 0) return [];
-        return Array.from({ length: numCount }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`);
+        return Array.from({ length: numCount }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`).sort(() => Math.random() - 0.5);;
     }, [path, count]);
 
     useEffect(() => {

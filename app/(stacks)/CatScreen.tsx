@@ -4,7 +4,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import styles from '@/styles/styles';
 import { Cate } from '@/types';
 
-import { genFreshList, genCCCList, genDXYList, genLXLList, genYCCList, genSYZList, genWXYList, genKeleList, genOthersList, genXLZList, genAnranList } from '@/components/cat/genImageList'
+import {genHolidayList, genFreshList, genCCCList, genDXYList, genLXLList, genYCCList, genSYZList, genWXYList, genKeleList, genOthersList, genXLZList, genAnranList } from '@/components/cat/genImageList'
 
 const CategoryScreen: React.FC = () => {
     const [categories, setCategories] = useState<Cate[]>([]);
@@ -137,10 +137,7 @@ const CategoryScreen: React.FC = () => {
             ]);
         } else if (itemid === 'holiday') {
             setCategories([
-                { id: "OTHERSof1", title: "Fresh & Trending", cover: genFreshList("others/of", 20)[0], count: "10", path: "abfresh/others/of" },
-                { id: "OTHERSStu", title: "student w glass", cover: genOthersList("student/stu", 5)[1], count: "5", path: "abothers/student/stu" },
-                { id: "OTHERSGreen", title: "green", cover: genOthersList("green/green", 5)[2], count: "5", path: "abothers/green/green" },
-                { id: "OTHERSMid", title: "middle age", cover: genOthersList("middleage/mid", 5)[3], count: "5", path: "abothers/middleage/mid" },
+                { id: "HolidayLu", title: "Chinese New Year",  cover: genHolidayList("luneryear/lu", 10)[1], count: "5", path: "abholiday/luneryear/lu" },
             ]);
         } else {
             setCategories([
