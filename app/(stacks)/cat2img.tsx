@@ -8,7 +8,6 @@ const BASE_URL = "https://ai8ai.github.io/";
 
 const Cat2Img = () => {
     const par = useLocalSearchParams();
-    const navigation = useNavigation();
 
     const catId = Array.isArray(par.itemid) ? par.itemid[0] : par.itemid;
     const path = Array.isArray(par.path) ? par.path[0] : par.path;
@@ -20,12 +19,6 @@ const Cat2Img = () => {
         return Array.from({ length: numCount }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`);
     }, [path, count]);
 
-    useEffect(() => {
-        navigation.setOptions({
-            title: catId || "Asian Beantiful Women",
-            headerShown: false,  // Hides the header
-        });
-    }, [navigation]);
 
     return <Slideshow images={imageList} />;
 };

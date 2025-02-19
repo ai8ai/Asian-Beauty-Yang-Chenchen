@@ -78,7 +78,9 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
                             <Button title="Save" onPress={() => { saveInterval(); setModalVisible(false); }} />
                         </View>
                     </View>
+                    <StatusBar style="light" translucent />
                 </View>
+                <StatusBar style="light" translucent />
             </Modal>
             <StatusBar style="light" translucent />
 
