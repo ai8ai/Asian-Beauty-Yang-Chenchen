@@ -4,7 +4,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import styles from '@/styles/styles';
 import { Cate } from '@/types';
 
-import { genHolidayList, genImgList, genFreshList, genCCCList, genDXYList, genLXLList, genYCCList, genSYZList, genWXYList, genKeleList, genOthersList, genXLZList, genAnranList } from '@/components/cat/genImageList'
+import { genImgList, genFreshList, genCCCList, genDXYList, genLXLList, genYCCList, genSYZList, genWXYList, genKeleList, genOthersList, genXLZList, genAnranList } from '@/components/cat/genImageList'
 
 const CategoryScreen: React.FC = () => {
     const [categories, setCategories] = useState<Cate[]>([]);
@@ -143,7 +143,7 @@ const CategoryScreen: React.FC = () => {
             ]);
         } else if (itemid === 'holiday') {
             setCategories([
-                { id: "HolidayLu", title: "Chinese New Year", cover: genHolidayList("luneryear/lu", 10)[0], count: "30", path: "abholiday/luneryear/lu" },
+                { id: "HolidayLu", title: "Chinese New Year", cover: genImgList("abholiday/luneryear/lu", 10)[0], count: "30", path: "abholiday/luneryear/lu" },
             ]);
         } else {
             setCategories([
