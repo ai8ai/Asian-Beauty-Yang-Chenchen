@@ -12,9 +12,7 @@ export default function Layout() {
                 <Drawer screenOptions={({ route }) => ({
                     drawerItemStyle: hiddenScreens.includes(route.name) ? { display: "none" } : {},
                 })}>
-                    <Drawer.Screen name="index" options={{ drawerLabel: 'Home', title: 'Asian Beauty',drawerItemStyle: { display: "none" }, headerShown: true}} />
-                    <Drawer.Screen name="about" options={{ drawerLabel: 'HomeD', title: 'DAsian Beauty', drawerItemStyle: { display: "none" }, headerShown: true}} />
-                    <Drawer.Screen name="(stacks)" options={{ drawerLabel: 'HofmeD', title: 'HS', drawerItemStyle: { display: "none" }, headerShown: true}} />
+                    <Drawer.Screen name="index" options={{ drawerLabel: 'Home', title: 'Asian Beauty', headerShown: true}} />
                 </Drawer>
             </GestureHandlerRootView>
             <StatusBar style="light" translucent />
