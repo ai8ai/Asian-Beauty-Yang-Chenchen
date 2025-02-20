@@ -4,7 +4,7 @@ import { Drawer } from 'expo-router/drawer';
 import { StatusBar } from 'expo-status-bar';
 
 export default function Layout() {
-    const hiddenScreens = ["detail", "profile" , "(stacks)"];
+    const hiddenScreens = ["detail", "profile" , "(stacks)", "about"];
 
     return (
         <>

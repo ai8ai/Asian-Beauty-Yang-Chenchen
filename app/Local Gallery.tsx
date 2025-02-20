@@ -48,7 +48,7 @@ function MainGallery() {
     const handleAlbumPress = (album: AlbumWithCover) => {
         console.log('Album pressed:', album);
         router.push({
-            pathname: '/detail/about',
+            pathname: '/about',
             params: { selectedAlbum: JSON.stringify(album) },
         });
     };
