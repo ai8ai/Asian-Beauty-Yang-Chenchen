@@ -22,7 +22,6 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
 
     const [hasPermission, setHasPermission] = useState<boolean | null>(null);
 
-
     const anim = Object.values(AnimationType);
     const selectedAnimation = anim[currentImage % anim.length];
     console.log("---" + selectedAnimation)
@@ -70,7 +69,7 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
                 </Pressable>
             </Animated.View>
             <Modal transparent animationType="slide" visible={modalVisible} onRequestClose={() => setModalVisible(false)}>
-                <View style={styles.modalContainer}>
+                <Pressable style={styles.modalContainer} onPress={() => setModalVisible(false)}>
                     <View style={styles.modalContent}>
                         <View style={styles.inputRow}>
                             <Text style={styles.label}>Interval (1 - 99 s):</Text>
@@ -89,7 +88,7 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
                             <Text style={styles.buttonText}>Save Picture</Text>
                         </TouchableOpacity>
                     </View>
-                </View>
+                </Pressable>
             </Modal>
         </View>
     );
