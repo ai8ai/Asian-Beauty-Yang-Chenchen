@@ -78,13 +78,34 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
 
-    modalOption: {
-        fontSize: 18,
-        padding: 15,
-        textAlign: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor: '#ddd',
+    modalOverlay: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    // modalOption: {
+    //     fontSize: 18,
+    //     padding: 15,
+    //     textAlign: 'center',
+    //     borderBottomWidth: 1,
+    //     borderBottomColor: '#ddd',
+    // },
     
 
 
@@ -222,12 +243,6 @@ const styles = StyleSheet.create({
         height: 400,
         borderRadius: 15,
         resizeMode: 'cover',
-    },
-    modalOverlay: {
-        flex: 1,
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',
-        justifyContent: 'center',
-        alignItems: 'center',
     },
     modalCard: {
         width: '85%',

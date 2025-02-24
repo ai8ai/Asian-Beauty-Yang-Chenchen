@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
-import { View, Text, Image, Modal, Animated, Pressable, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, Image, Modal, Animated, Pressable, Alert, TouchableOpacity } from 'react-native';
 
 import styles from '@/config/styles';
 import { genImgList } from '@/utils/genImageList'
-import { AnimationType, getAnimationStyle } from '@/utils/animationStyles';
 
 export default function SlideshowScreen() {
     const navigation = useNavigation();
@@ -31,21 +30,34 @@ export default function SlideshowScreen() {
         };
     }, [parentNavi]);
 
-
     return (
         <View style={styles.sliderContainer}>
-            <TouchableOpacity onPress={() => Alert.alert("Hi")} style={{ position: 'absolute', width: '100%', height: '100%' }}>
+            <TouchableOpacity onPress={() => setModalVisible(true)} style={{ position: 'absolute', width: '100%', height: '100%' }}>
                 <Image source={{ uri: images[currentImage] }} style={styles.sliderImage} />
             </TouchableOpacity>
 
             <View style={styles.sliderNavigation}>
                 <TouchableOpacity onPress={handleSwipeRight} style={styles.sliderNavButton}>
-                    <Text style={styles.sliderNavText}>←</Text>
+                    <Text style={[styles.sliderNavText, { fontFamily: 'monospace' }]}>←</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={handleSwipeLeft} style={styles.sliderNavButton}>
-                    <Text style={styles.sliderNavText}>→</Text>
+                    <Text style={[styles.sliderNavText, { fontFamily: 'monospace' }]}>→</Text>
                 </TouchableOpacity>
             </View>
+
+            <Modal transparent animationType="slide" visible={modalVisible} onRequestClose={() => setModalVisible(false)}>
+                <Pressable style={styles.modalContainer} onPress={() => setModalVisible(false)}>
+                    <View style={styles.modalContent}>
+                        <TouchableOpacity style={styles.saveButton} onPress={() => { }}>
+                            <Text style={styles.buttonText}>▶️ Start Slideshow</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.savePictureButton} onPress={() => { }}>
+                            <Text style={styles.buttonText}>✅ Save Image</Text>
+                        </TouchableOpacity>
+
+                    </View>
+                </Pressable>
+            </Modal>
         </View>
     );
 }
