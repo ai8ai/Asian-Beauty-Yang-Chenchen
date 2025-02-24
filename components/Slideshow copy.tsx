@@ -63,10 +63,10 @@ const SlideshowYcc: React.FC<SlideshowYccProps> = ({ images }) => {
     };
 
     return (
-        <View style={styles.imageContainer}>
-            <Animated.View style={[styles.image, getAnimationStyle(selectedAnimation, scaleAnim)]}>
+        <View style={styles.sliderContainer}>
+            <Animated.View style={[styles.sliderImage, getAnimationStyle(selectedAnimation, scaleAnim)]}>
                 <Pressable onPress={() => setModalVisible(true)}>
-                    <Animated.Image source={{ uri: images[currentImage] }} style={styles.image} />
+                    <Animated.Image source={{ uri: images[currentImage] }} style={styles.sliderImage} />
                 </Pressable>
             </Animated.View>
             <Modal transparent animationType="slide" visible={modalVisible} onRequestClose={() => setModalVisible(false)}>

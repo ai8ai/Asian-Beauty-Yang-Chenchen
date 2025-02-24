@@ -1,4 +1,4 @@
-// (stacks)/_layout.tsx
+// (stacks)/_layout.tsx ✅ ✅ Save Image ▶️ Start Slideshow ⏳ Set Interval Time (use a simple slider or dropdown)⏹️ Switch to Manual Mode
 import React, {useEffect} from "react";
 import { Stack, useNavigation, useLocalSearchParams } from "expo-router";
 

@@ -53,6 +53,66 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
 
+    sliderContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    sliderImage: {
+        width: '100%',
+        height: '100%',
+        resizeMode: 'cover',
+    },
+
+  
+
+
+
+
+
+
+
+
+    modalContainer: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        backgroundColor: 'white',
+        padding: 20,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: -3 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
+        elevation: 5,
+    },
+    modalOption: {
+        fontSize: 18,
+        padding: 15,
+        textAlign: 'center',
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+    },
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     albumContainer: {
@@ -87,21 +147,11 @@ const styles = StyleSheet.create({
     },
 
 
-    imageContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    image: {
-        width: '100%',
-        height: '100%',
-        resizeMode: 'cover',
-    },
     loading: {
         flex: 1,
         justifyContent: 'center',
     },
-    modalContainer: {
+    modalContainerold: {
         flex: 1,
         justifyContent: 'flex-end',
         alignItems: 'center',

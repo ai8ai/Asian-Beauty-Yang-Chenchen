@@ -49,10 +49,10 @@ const AlbumSlideshow: React.FC<{ album: MediaLibrary.Album }> = ({ album }) => {
     }
 
     return (
-        <View style={styles.imageContainer}>
-            <Animated.View style={[styles.image, getAnimationStyle(animationType, scaleAnim)]}>
+        <View style={styles.sliderContainer}>
+            <Animated.View style={[styles.sliderImage, getAnimationStyle(animationType, scaleAnim)]}>
                 <Pressable onPress={() => setModalVisible(true)}>
-                    <Animated.Image source={{ uri: images[currentIndex] }} style={styles.image} />
+                    <Animated.Image source={{ uri: images[currentIndex] }} style={styles.sliderImage} />
                 </Pressable>
             </Animated.View>
             <Modal
