@@ -35,6 +35,24 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 
+    sliderNavigation: {
+        position: 'absolute',
+        top: '80%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+        paddingHorizontal: 20,
+    },
+    sliderNavButton: {
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
+        padding: 10,
+        borderRadius: 5,
+    },
+    sliderNavText: {
+        color: '#fff',
+        fontSize: 20,
+    },
+
 
 
     albumContainer: {

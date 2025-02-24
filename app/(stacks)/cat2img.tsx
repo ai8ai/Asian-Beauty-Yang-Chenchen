@@ -1,29 +1,37 @@
-// cat2img.tsx
 import React, {useState, useEffect, useMemo  } from 'react';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
+import { View, Text, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 
-import Slideshow from '@/components/Slideshow';
-const BASE_URL = "https://ai8ai.github.io/";
+import styles         from '@/config/styles';
+import { genImgList } from '@/utils/genImageList'
 
-
-const Cat2Img = () => {
+export default function SlideshowScreen() {
     const navigation = useNavigation();
     const parentNavi = navigation.getParent();
 
-    const par = useLocalSearchParams();
-    const catId =Array.isArray(par.itemid) ? par.itemid[0] : par.itemid;
-    const path = Array.isArray(par.path) ? par.path[0] : par.path;
-    const count = Array.isArray(par.count) ? par.count[0] : par.count;
+    const { imgPath, count } = useLocalSearchParams();
+    // "count": "10",   "path": "abspecialtaste/finger/fi"}
 
-    const imageList = useMemo(() => {
-        // console.log(catId + '  ' + path + '  '+ count)
-        const numCount = parseInt(count || '0', 10); // 10 is radix , not a number 10
-        if (!path) {            return ["fff-path"];        }
-        if ( isNaN(numCount) || numCount <= 0) return ["fff-numCount"];
-        return Array.from({ length: numCount }, (_, i) => `${BASE_URL}${path}${i + 1}.jpg`).sort(() => Math.random() - 0.5);
-    }, [path, count]);
-    
-    console.log("-------- Generated imageList:", imageList);
+    const images = genImgList(imgPath as string, Number(count));
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const goToNextImage = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    };
+
+    const goToPrevImage = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    };
+
+    const handleSwipeLeft = () => {
+        goToNextImage();
+    };
+
+    const handleSwipeRight = () => {
+        console.log(images[currentIndex]);
+        goToPrevImage();
+    };
 
     useEffect(() => {
         if (parentNavi) {
@@ -36,7 +44,23 @@ const Cat2Img = () => {
         };
     }, [parentNavi]);
 
-    return <Slideshow images={imageList} />;
-};
 
-export default Cat2Img;
+    return (
+        <View style={styles.imageContainer}>
+            {images.length > 0 ? (
+                <Image source={{ uri: images[currentIndex] }} style={styles.image} />
+            ) : (
+                <Text style={styles.sliderNavText}>No images available</Text>
+            )}          
+            <View style={styles.sliderNavigation}>
+                <TouchableOpacity onPress={handleSwipeRight} style={styles.sliderNavButton}>
+                    <Text style={styles.sliderNavText}>←</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handleSwipeLeft} style={styles.sliderNavButton}>
+                    <Text style={styles.sliderNavText}>→</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+    );
+}
+

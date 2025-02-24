@@ -3,14 +3,14 @@ import React, {useEffect} from "react";
 import { Stack, useNavigation, useLocalSearchParams } from "expo-router";
 
 const StacksLayout = () => {
-    const { catId, catTitle } = useLocalSearchParams();  // Get the itemid from route params
+    const { catId, catTitle, catShortTitle } = useLocalSearchParams();  // Get the itemid from route params
     const navigation = useNavigation();
 
     useEffect(() => {
         // Update the header title dynamically
         if (catId) {
             navigation.setOptions({
-                headerTitle: catTitle,  // Dynamically set the headerTitle to itemid
+                headerTitle: catShortTitle,  // Dynamically set the headerTitle to itemid
             });
         }
     }, [catId, navigation]);
