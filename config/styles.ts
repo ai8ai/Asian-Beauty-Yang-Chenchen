@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
 
     sliderNavigation: {
         position: 'absolute',
-        top: '80%',
+        top: '60%',
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     sliderNavText: {
+        fontWeight: 'bold',
         color: '#fff',
         fontSize: 20,
     },
@@ -63,30 +64,20 @@ const styles = StyleSheet.create({
         height: '100%',
         resizeMode: 'cover',
     },
-
-  
-
-
-
-
-
-
-
-
+ 
     modalContainer: {
-        position: 'absolute',
-        bottom: 0,
-        width: '100%',
-        backgroundColor: 'white',
-        padding: 20,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-        elevation: 5,
+        flex: 1,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
     },
+    modalContent: {
+        width: screenWidth * 0.70,
+        padding: 20,
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+        borderRadius: 10,
+        alignItems: 'flex-start',
+    },
+
     modalOption: {
         fontSize: 18,
         padding: 15,
@@ -150,18 +141,6 @@ const styles = StyleSheet.create({
     loading: {
         flex: 1,
         justifyContent: 'center',
-    },
-    modalContainerold: {
-        flex: 1,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-    },
-    modalContent: {
-        width: screenWidth * 0.70,
-        padding: 20,
-        backgroundColor: 'rgba(0, 0, 0, 0.4)',
-        borderRadius: 10,
-        alignItems: 'flex-start',
     },
     inputContainer: {
         marginBottom: 10,
