@@ -1,4 +1,4 @@
-import { Cate } from '@/types'; // Import the TopCate interface
+import { CatInterface } from '@/config'; // Import the TopCate interface
 
 const keleCovers: string[] = [
     "https://ai8ai.github.io/abcat/kele/kc1.jpg",
@@ -16,7 +16,7 @@ const keleCovers: string[] = [
 ]
 const srckele = keleCovers.sort(() => Math.random() - 0.5);
 
-const keleCate: Cate[] = [
+const keleCate: CatInterface[] = [
     { id: "1", title: "Amazing Start!", cover: srckele[0] },
     { id: "2", title: "Explore the Beauty", cover: srckele[1] },
     { id: "3", title: "Vibrant Colors", cover: srckele[2] },

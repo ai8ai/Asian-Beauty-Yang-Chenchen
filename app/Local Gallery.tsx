@@ -1,4 +1,4 @@
-import styles from '@/styles/styles';
+import styles from '@/config/styles';
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, FlatList, Image, Text, TouchableOpacity, Alert } from 'react-native';
 import * as MediaLibrary from 'expo-media-library';
@@ -66,14 +66,14 @@ function MainGallery() {
     );
 
     return (
-        <View style={styles.container}>
+        <View style={styles.mainContainer}>
             {permissionGranted ? (
                 <FlatList
                     data={albums}
                     keyExtractor={(item) => item.id}
                     renderItem={renderAlbum}
                     numColumns={2}
-                    contentContainerStyle={styles.grid}
+                    contentContainerStyle={styles.mainGrid}
                 />
             ) : (
                 <Text style={styles.permissionText}>Permission required to access media library.</Text>

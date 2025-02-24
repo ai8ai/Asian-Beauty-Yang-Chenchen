@@ -1,9 +1,9 @@
 // paths/getAfcCate.ts
-import { Cate } from '@/types';
+import { CatInterface } from '@/config';
 
-let afcCategories: Cate[] = []; // Storage for fetched AFC categories
+let afcCategories: CatInterface[] = []; // Storage for fetched AFC categories
 
-async function fetchAfcCateCover(): Promise<Cate[]> {
+async function fetchAfcCateCover(): Promise<CatInterface[]> {
     try {
         const response = await fetch('https://raw.githubusercontent.com/AIdrescom/Asian-Beauty-Yang-Chenchen-Data/refs/heads/main/categoryList/afccat.json');
 

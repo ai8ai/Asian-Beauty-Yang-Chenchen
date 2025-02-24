@@ -1,5 +1,5 @@
 // getTopCate.tsx
-import { Cate } from '@/types'; // Import the TopCate interface
+import { CatInterface } from '@/config'; // Import the TopCate interface
 
 const dxyCovers: string[] = [
     "https://ai8ai.github.io/abcat/dxy/dc1.jpg",
@@ -13,7 +13,7 @@ const dxyCovers: string[] = [
 ]
 const srcdxy = dxyCovers.sort(() => Math.random() - 0.5);
 
-const dxyCate: Cate[] = [
+const dxyCate: CatInterface[] = [
     { id: "1", title: "Amazing Start!", cover: srcdxy[0] },
     { id: "2", title: "Explore the Beauty", cover: srcdxy[1] },
     { id: "3", title: "Vibrant Colors", cover: srcdxy[2] },

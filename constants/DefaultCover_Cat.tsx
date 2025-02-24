@@ -1,5 +1,5 @@
 // getTopCate.tsx
-import { Cate } from '@/types'; // Import the TopCate interface
+import { CatInterface } from '@/config'; // Import the TopCate interface
 
 const defaultCovers: string[] = [
     "https://ai8ai.github.io/abcat/default/yc1.jpg",
@@ -14,7 +14,7 @@ const defaultCovers: string[] = [
 ]
 const srcDefault = defaultCovers.sort(() => Math.random() - 0.5);
 
-const defaultCate: Cate[] = [
+const defaultCate: CatInterface[] = [
     { id: "defaultcat01", title: "Amazing Start!", cover: srcDefault[0] },
     { id: "defaultcat02", title: "Explore the Beauty", cover: srcDefault[1] },
     { id: "defaultcat03", title: "Vibrant Colors", cover: srcDefault[2] },

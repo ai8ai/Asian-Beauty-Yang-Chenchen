@@ -1,8 +1,8 @@
 // utils/getCategoryData.ts
-import { Cate } from '@/types';
+import { CatInterface } from '@/config';
 import fetchCover_Cat from '@/components/cat/fetchCover_Cat';
 
-const getCategoryData = async (category: string): Promise<Cate[]> => {
+const getCategoryData = async (category: string): Promise<CatInterface[]> => {
     const categoryMap: Record<string, { coverKey: string; catKey: string }> = {
         ycc_cat: { coverKey: 'CatCoverYCC', catKey: 'CatYCC' },
         syz_cat: { coverKey: 'CatCoverSYZ', catKey: 'CatSYZ' },

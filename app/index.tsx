@@ -1,30 +1,30 @@
 // index.tsx
-import React, { useEffect, useState } from 'react';
-import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
-import { router } from 'expo-router';  // To navigate between screens
+import { router } from 'expo-router';
+import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 
-import { Cate } from '@/types'; 
-import styles   from '@/styles/styles';
-
-import HomeList  from '@/components/home/getHomeList'; // Import the Home Listed Categories
+import { CatInterface } from '@/config/tstype';
+import styles from '@/config/styles';
+import { HomeList } from '@/data/CatImgList';
 
 const HomeScreen = () => {
-    const handleItemPress = (item: Cate) => {
-        // { id: "anran", title: "Anran 安然",            shorttitle:"Anran",            cover: anranHomeCover[0] },
-        // { id: "kele", title: "Kele Vicky",             shorttitle:"Kele Vicky",    cover: keleHomeCover[0] },
+    const handleItemPress = (item: CatInterface) => {
         router.push({
             pathname: "/CatScreen",
-            params: { itemid: item.id, itemtitle: item.shorttitle },
+            params: {
+                catId: item.id, 
+                catTitle: item.title,
+                catShortTitle: item.shorttitle
+            },
         });
     };
 
-    const renderItem = ({ item }: { item: Cate }) => (
+    const renderItem = ({ item }: { item: CatInterface }) => (
         <TouchableOpacity
-            style={styles.galleryItemContainer}
+            style={styles.catContainer}
             onPress={() => handleItemPress(item)}
         >
-            <Image source={{ uri: item.cover }} style={styles.galleryItemImage} />
-            <Text style={styles.galleryItemTitle} numberOfLines={2}>
+            <Image source={{ uri: item.cover }} style={styles.catCoverImg} />
+            <Text style={styles.catTitle} numberOfLines={2}>
                 {item.title}
             </Text>
         </TouchableOpacity>
@@ -32,13 +32,13 @@ const HomeScreen = () => {
 
 
     return (
-        <View style={styles.galleryContainer}>
+        <View style={styles.mainContainer}>
             <FlatList
                 data={HomeList}
                 keyExtractor={(item) => item.id}
                 renderItem={renderItem}
                 numColumns={2}
-                contentContainerStyle={styles.galleryGrid}
+                contentContainerStyle={styles.mainGrid}
             />
         </View>
     );

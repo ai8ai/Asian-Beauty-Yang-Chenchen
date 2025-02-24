@@ -3,14 +3,39 @@ import { Modal, View, Text, TextInput, Pressable, StyleSheet, Dimensions } from 
 const screenWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
-    container: {
+    mainContainer: {
         flex: 1,
         backgroundColor: '#f9f9f9',
         padding: 10,
     },
-    grid: {
+    mainGrid: {
         justifyContent: 'space-between',
+        paddingBottom: 20,
     },
+
+    catContainer: {
+        alignItems: 'center',
+        width: '48%',
+        aspectRatio: 9 / 16,
+        marginBottom: 10,
+        marginTop: 3,
+        marginLeft: 3,
+        marginRight: 3,
+    },
+    catCoverImg: {
+        height: '88%',
+        width: '100%',
+        aspectRatio: 10 / 16,
+        borderRadius: 8,
+    },
+    catTitle: {
+        marginTop: 5,
+        fontSize: 14,
+        color: '#333',
+        textAlign: 'center',
+    },
+
+
 
     albumContainer: {
         flex: 1,
@@ -106,33 +131,6 @@ const styles = StyleSheet.create({
         fontSize: 16,
         flex: 1,
         marginRight: 18,
-    },
-    galleryContainer: {
-        flex: 1,
-        backgroundColor: '#fff',
-        padding: 10,
-    },
-    galleryGrid: {
-        justifyContent: 'space-between',
-        paddingBottom: 20,
-    },
-    galleryItemContainer: {
-        alignItems: 'center',
-        width: '48%',
-        aspectRatio: 9 / 16,
-        marginBottom: 10,
-    },
-    galleryItemImage: {
-        height: '85%',
-        width: '100%',
-        aspectRatio: 10 / 16,
-        borderRadius: 8,
-    },
-    galleryItemTitle: {
-        marginTop: 5,
-        fontSize: 14,
-        color: '#333',
-        textAlign: 'center',
     },
     loadingContainer: {
         flex: 1,

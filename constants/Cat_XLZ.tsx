@@ -1,10 +1,10 @@
 // getTopCate.tsx
-import { Cate } from '@/types'; // Import the TopCate interface
+import { CatInterface } from '@/config'; // Import the TopCate interface
 import { xlzCovers } from '@/data/CatList';
 
 const srcYCC = xlzCovers.sort(() => Math.random() - 0.5);
 
-const yccCate: Cate[] = [
+const yccCate: CatInterface[] = [
     { id: "YCCcat01", title: "Amazing 1Start!", cover: srcYCC[0] },
     { id: "YCCcat02", title: "Explore the Beauty", cover: srcYCC[1] },
     { id: "YCCcat03", title: "Vibrant Colors", cover: srcYCC[2] },

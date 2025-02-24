@@ -1,7 +1,7 @@
-import { Cate } from '@/types'; // Import the TopCate interface
+import { CatInterface } from '@/config'; // Import the TopCate interface
 import fetchCover_Cat from '@/components/cat/fetchCover_Cat'; // The new fetch function
 
-const getYccCate = async (): Promise<Cate[]> => {
+const getYccCate = async (): Promise<CatInterface[]> => {
     try {
         const data = await fetchCover_Cat(); // Fetch the full data object
         const yccCovers = data.HomeCoverYCC || []; // Extract yccCovers from the fetched data

@@ -1,4 +1,4 @@
-import styles from '@/styles/styles'
+import styles from '@/config/styles'
 import { useEffect, useState } from 'react';
 import { View, ActivityIndicator, Animated, Pressable, Modal, Text, TextInput, Button } from 'react-native';
 import * as MediaLibrary from 'expo-media-library';

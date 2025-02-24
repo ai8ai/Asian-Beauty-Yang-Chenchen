@@ -1,19 +1,19 @@
+// (stacks)/_layout.tsx
 import React, {useEffect} from "react";
-import { Stack, useNavigation } from "expo-router";
-import { router, useLocalSearchParams } from 'expo-router';
+import { Stack, useNavigation, useLocalSearchParams } from "expo-router";
 
 const StacksLayout = () => {
-    const { itemid, itemtitle } = useLocalSearchParams();  // Get the itemid from route params
+    const { catId, catTitle } = useLocalSearchParams();  // Get the itemid from route params
     const navigation = useNavigation();
 
     useEffect(() => {
         // Update the header title dynamically
-        if (itemid) {
+        if (catId) {
             navigation.setOptions({
-                headerTitle: itemtitle,  // Dynamically set the headerTitle to itemid
+                headerTitle: catTitle,  // Dynamically set the headerTitle to itemid
             });
         }
-    }, [itemid, navigation]);
+    }, [catId, navigation]);
 
     return (
         <Stack>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { TouchableOpacity, View, ActivityIndicator, Animated, Pressable, Modal, Text, TextInput, Button, Image } from 'react-native';
-import styles from '@/styles/styles';
+import styles from '@/config/styles';
 import { StatusBar } from 'expo-status-bar';
 import * as MediaLibrary from 'expo-media-library';
 import * as FileSystem from 'expo-file-system';

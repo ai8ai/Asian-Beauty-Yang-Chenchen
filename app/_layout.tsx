@@ -4,7 +4,7 @@ import { Drawer } from 'expo-router/drawer';
 import { StatusBar } from 'expo-status-bar';
 
 export default function Layout() {
-    const hiddenScreens = ["detail", "profile" , "(stacks)", "about"];
+    const hiddenScreens = ["detail", "profile", "(stacks)", "about"];
 
     return (
         <>
@@ -12,7 +12,8 @@ export default function Layout() {
                 <Drawer screenOptions={({ route }) => ({
                     drawerItemStyle: hiddenScreens.includes(route.name) ? { display: "none" } : {},
                 })}>
-                    <Drawer.Screen name="index" options={{ drawerLabel: 'Home', title: 'Asian Beauty', headerShown: true}} />
+                    <Drawer.Screen name="index" options={{ drawerLabel: 'Home', title: 'Asian Beauty', headerShown: true }} />
+                    <Drawer.Screen name="(stacks)" options={{ drawerLabel: 'Category', title: 'Category1', headerShown: true }} />
                 </Drawer>
             </GestureHandlerRootView>
             <StatusBar style="light" translucent />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { router } from 'expo-router';
 
-import styles from '@/styles/styles';
+import styles from '@/config/styles';
 import YccCatPromise from '@/components/home/getHomeList'; // Import the Promise
 
 interface YccCategory {
@@ -44,11 +44,11 @@ const YccGallery = () => {
 
     const renderItem = ({ item }: { item: YccCategory }) => (
         <TouchableOpacity
-            style={styles.galleryItemContainer}
+            style={styles.catContainer}
             onPress={() => handleItemPress(item)}
         >
-            <Image source={{ uri: item.cover }} style={styles.galleryItemImage} />
-            <Text style={styles.galleryItemTitle} numberOfLines={1}>
+            <Image source={{ uri: item.cover }} style={styles.catCoverImg} />
+            <Text style={styles.catTitle} numberOfLines={1}>
                 {item.title}
             </Text>
         </TouchableOpacity>
@@ -72,13 +72,13 @@ const YccGallery = () => {
     }
 
     return (
-        <View style={styles.galleryContainer}>
+        <View style={styles.mainContainer}>
             <FlatList
                 data={yccCategories}
                 keyExtractor={(item) => item.id}
                 renderItem={renderItem}
                 numColumns={2}
-                contentContainerStyle={styles.galleryGrid}
+                contentContainerStyle={styles.mainGrid}
             />
         </View>
     );

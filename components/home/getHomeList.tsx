@@ -1,5 +1,5 @@
 // Home Category
-import { Cate } from '@/types';
+import { CatInterface } from '@/config';
 import {genCatCoverList} from '@/components/cat/genImageList'
 
 const yccHomeCover = genCatCoverList("ycc/yc", 10);
@@ -18,7 +18,7 @@ const specialHomeCover = genCatCoverList("special/sc", 10);
 const sceneHomeCover = genCatCoverList("ccc/cc", 10);
 
 
-const HomeList: Cate[] = [
+const HomeList: CatInterface[] = [
     { id: "ycc", title: "Yang Chenchen \n Yome Sugar 杨晨晨",shorttitle:"Yang Chenchen", cover: yccHomeCover[0] },
     { id: "syz", title: "Son Yoon Joo \n 손윤주 孙允珠",     shorttitle:"Son Yoon Joo",  cover: syzHomeCover[0] },
     { id: "wxy", title: "Wang Xinyao \n Yanni 王馨瑶",      shorttitle:"Wang Xinyao",    cover: wxyHomeCover[0] },

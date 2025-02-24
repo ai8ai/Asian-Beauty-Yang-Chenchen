@@ -1,5 +1,5 @@
 // getTopCate.tsx
-import { Cate } from '@/types'; // Import the TopCate interface
+import { CatInterface } from '@/config'; // Import the TopCate interface
 
 const covers: string[] = [
     "https://ai8ai.github.io/abcat/wxy/wc1.jpg",
@@ -13,7 +13,7 @@ const covers: string[] = [
 ]
 const srcCover = covers.sort(() => Math.random() - 0.5);
 
-const wxyCat: Cate[] = [
+const wxyCat: CatInterface[] = [
     { id: "WXYcat01", title: "Office", cover: srcCover[0] },
     { id: "WXYcat02", title: "Lace", cover: srcCover[1] },
     { id: "WXYcat03", title: "Vibrant Colors", cover: srcCover[2] },

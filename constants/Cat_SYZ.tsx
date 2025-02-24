@@ -1,5 +1,5 @@
 // getTopCate.tsx
-import { Cate } from '@/types'; // Import the TopCate interface
+import { CatInterface } from '@/config'; // Import the TopCate interface
 
 const yccCovers: string[] = [
     "https://ai8ai.github.io/abcat/syz/sc1.png",
@@ -15,7 +15,7 @@ const yccCovers: string[] = [
 ]
 const srcYCC = yccCovers.sort(() => Math.random() - 0.5);
 
-const yccCate: Cate[] = [
+const yccCate: CatInterface[] = [
     { id: "1", title: "Amazing Start!", cover: srcYCC[0] },
     { id: "2", title: "Explore the Beauty", cover: srcYCC[1] },
     { id: "3", title: "Vibrant Colors", cover: srcYCC[2] },

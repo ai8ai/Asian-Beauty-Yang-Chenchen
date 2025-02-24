@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
-import styles from '@/styles/styles';
-import { Cate } from '@/types';
+import styles from '@/config/styles';
+import { CatInterface } from '@/config';
 
 import { genImgList, genFreshList, genCCCList, genDXYList, genLXLList, genYCCList, genSYZList, genWXYList, genKeleList, genOthersList, genXLZList, genAnranList } from '@/components/cat/genImageList'
 
 const CategoryScreen: React.FC = () => {
-    const [categories, setCategories] = useState<Cate[]>([]);
+    const [categories, setCategories] = useState<CatInterface[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     // { id: "anran", title: "Anran 安然",            shorttitle:"Anran",            cover: anranHomeCover[0] },
@@ -178,13 +178,13 @@ const CategoryScreen: React.FC = () => {
     }
 
     return (
-        <View style={styles.galleryContainer}>
+        <View style={styles.mainContainer}>
             <FlatList
                 data={categories}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <TouchableOpacity
-                        style={styles.galleryItemContainer}
+                        style={styles.catContainer}
                         onPress={() => router.push({
                             pathname: "/cat2img", params: {
                                 itemid: item.id,
@@ -194,14 +194,14 @@ const CategoryScreen: React.FC = () => {
                             }
                         })}
                     >
-                        <Image source={{ uri: item.cover }} style={styles.galleryItemImage} />
-                        <Text style={styles.galleryItemTitle} numberOfLines={2}>
+                        <Image source={{ uri: item.cover }} style={styles.catCoverImg} />
+                        <Text style={styles.catTitle} numberOfLines={2}>
                             {item.title}
                         </Text>
                     </TouchableOpacity>
                 )}
                 numColumns={2}
-                contentContainerStyle={styles.galleryGrid}
+                contentContainerStyle={styles.mainGrid}
             />
         </View>
     );

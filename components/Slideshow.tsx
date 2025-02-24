@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { TouchableOpacity, View, ActivityIndicator, Animated, Pressable, Modal, Text, TextInput, Button } from 'react-native';
-import styles from '@/styles/styles';
+import styles from '@/config/styles';
 
 import { AnimationType, getAnimationStyle } from '@/utils/animationStyles';
 import useScaleAnimation from '@/hooks/useAnimations';
