@@ -6,15 +6,15 @@ export const HomeList: CatInterface[] = [
     { id: "ycc", title: "Yang Chenchen \n Yome Sugar 杨晨晨", shorttitle: "Yang Chenchen", cover: genImgList("abcat/ycc/yc", 5)[0] },
     { id: "syz", title: "Son Yoon Joo \n 손윤주 孙允珠", shorttitle: "Son Yoon Joo", cover: genImgList("abcat/syz/sc", 5)[0] },
     { id: "wxy", title: "Wang Xinyao \n Yanni 王馨瑶", shorttitle: "Wang Xinyao", cover: genImgList("abcat/wxy/wc", 5)[0] },
-    { id: "kele", title: "Kele Vicky", shorttitle: "Kele Vicky", cover: genImgList("abcat/kele/kc", 5)[0] },
-    { id: "anran", title: "Anran 安然", shorttitle: "Anran", cover: genImgList("abcat/anran/ac", 10)[0] },
+    { id: "kel", title: "Kele Vicky", shorttitle: "Kele Vicky", cover: genImgList("abcat/kele/kc", 5)[0] },
+    { id: "anr", title: "Anran 安然", shorttitle: "Anran", cover: genImgList("abcat/anran/ac", 5)[0] },
     { id: "xlz", title: "Xu Lizhi Booty \n 徐莉芝", shorttitle: "Xu Lizhi", cover: genImgList("abcat/xlz/xc", 5)[0] },
     { id: "ccc", title: "Cheng Chengcheng 程程程", shorttitle: "Cheng Chengcheng", cover: genImgList("abcat/ccc/cc", 5)[0] },
     { id: "dxy", title: "Du Xiaoyu 杜小雨", shorttitle: "Du Xiaoyu", cover: genImgList("abcat/dxy/dc", 5)[0] },
     { id: "lxl", title: "Lin Xinglan 林星阑", shorttitle: "Lin Xinglan", cover: genImgList("abcat/lxl/lc", 5)[0] },
-    { id: "holiday", title: "Holidays", shorttitle: "Holidays", cover: genImgList("abcat/holiday/hc", 5)[0] },
-    { id: "special", title: "Special Taste", shorttitle: "Special Taste", cover: genImgList("abcat/special/sc", 5)[0] },
-    { id: "others", title: "and More...", shorttitle: "and More...", cover: genImgList("abcat/others/oc", 5)[0] },
+    { id: "hol", title: "Holidays", shorttitle: "Holidays", cover: genImgList("abcat/holiday/hc", 5)[0] },
+    { id: "spe", title: "Special Taste", shorttitle: "Special Taste", cover: genImgList("abcat/special/sc", 5)[0] },
+    { id: "sce", title: "Asian Scene", shorttitle: "Asican Scene", cover: genImgList("aicat/scene/sc", 5)[0] },
 ];
 
 export const Cat2Sub2Img: SubCategoryConfig = {
@@ -59,25 +59,25 @@ export const Cat2Sub2Img: SubCategoryConfig = {
         { id: "wxyLace", title: "Timeless Grace in Silk & Lace", count: "10", key: "lace/la" },
         { id: "wxyNight", title: "Nocturne in New York", count: "10", key: "nightnewyork/ni" },
         { id: "wxyOff", title: "Chic at Work", count: "10", key: "office/of" },
-		{ id: "wxyOut", title: "Breeze & Beyond", count: "10", key: "outdoor/ou" },
-		{ id: "wxyPants", title: "Chic in Motion", count: "10", key: "pants/pa" },
-		{ id: "wxySee", title: "Seethrough ...", count: "10", key: "seethrough/se" },
-		{ id: "wxySpa", title: "Sultry Spaghetti Straps", count: "40", key: "spaghetti/sp" },
+        { id: "wxyOut", title: "Breeze & Beyond", count: "10", key: "outdoor/ou" },
+        { id: "wxyPants", title: "Chic in Motion", count: "10", key: "pants/pa" },
+        { id: "wxySee", title: "Seethrough ...", count: "10", key: "seethrough/se" },
+        { id: "wxySpa", title: "Sultry Spaghetti Straps", count: "40", key: "spaghetti/sp" },
         { id: "wxyUni", title: "Mystic in Uniform", count: "10", key: "uniform/un" },
     ]),
 
     ccc: genSubCat("abccc", [
         { id: "cccStunning", title: "Daily Fresh & Hot Trends", count: "10", key: "stunning/st" },
         { id: "cccBBS", title: "Cozy & Seductive Moments", count: "10", key: "bbs/ba" },
-		{ id: "cccBri", title: "Briliant ...", count: "10", key: "briliant/br" },
-		{ id: "cccSexy", title: "Sultry", count: "10", key: "sexy/se" },
+        { id: "cccBri", title: "Briliant ...", count: "10", key: "briliant/br" },
+        { id: "cccSexy", title: "Sultry", count: "10", key: "sexy/se" },
         { id: "cccStr", title: "Bare & Beautiful", count: "10", key: "strapless/st" },
     ]),
-    
+
     dxy: genSubCat("abdxy", [
         { id: "dxyViolet", title: "Daily Fresh & Hot Trends", count: "10", key: "violet/vi" },
         { id: "dxyGreen", title: "Cozy & Seductive Moments", count: "10", key: "green/gr" },
-		{ id: "dxyPink", title: "Briliant Pinkcount", count: "10", key: "pink/pi" },
+        { id: "dxyPink", title: "Briliant Pinkcount", count: "10", key: "pink/pi" },
     ]),
 
     lxl: genSubCat("ablxl", [
@@ -92,8 +92,46 @@ export const Cat2Sub2Img: SubCategoryConfig = {
         { id: "lxlTeacher", title: "Enchanting in Teaching", count: "10", key: "teacher/te" },
     ]),
 
-    
+    spe: genSubCat("abspecialtaste", [
+        { id: "speStunning", title: "Daily Fresh & Hot Trends", count: "10", key: "stunning/st" },
+        { id: "speBack", title: "Elegance from Behind", count: "20", key: "back/ba" },
+        { id: "speButt", title: "Curves & Confidence", count: "10", key: "butt/bu" },
+        { id: "speFinger", title: "Graceful Fingertips", count: "10", key: "finger/fi" },
+        { id: "speLeg", title: "Poise in Every Step", count: "30", key: "legfeet/le" },
+    ]),
 
+    hol: genSubCat("abholiday", [
+        { id: "holLuneryear", title: "Chinese New Year", count: "40", key: "luneryear/lu" },
+        { id: "holDeco", title: "Sublime Décolleté", count: "30", key: "deco/de" },
+        { id: "holWal", title: "Elegant Wallpaper", count: "50", key: "wallpaper/wa" },
+    ]),
+
+
+    anr: genSubCat("abanran", [
+        { id: "anrStunning", title: "Daily Fresh & Hot Trends", count: "10", key: "stunning/st" },
+        { id: "anrSto", title: "Silken Allure & Enchanting Legs", count: "10", key: "stockings/st" },
+        { id: "anrOff", title: "Chic at Work", count: "10", key: "office/of" },
+        { id: "anrHot", title: "Luxe Escapes & Midnight Whispers", count: "10", key: "anr/hot" },
+        { id: "anrDenim", title: "Casual Chic in Denim", count: "50", key: "demins/de" },
+        { id: "anrClass", title: "Enchanting in Class", count: "10", key: "classroom/cl" },
+    ]),
+
+    sce: genSubCat("isce", [
+        { id: "sc1", title: "Sea", count: "10", key: "sea/se" },
+        { id: "sc2", title: "Lone", count: "10", key: "lone/lo" },
+        { id: "sc3", title: "Land", count: "10", key: "land/la" },
+    ]),
+
+    xlz: genSubCat("abxlz", [
+        { id: "xlzBed", title: "Cozy & Seductive Moments", count: "10", key: "bbs/be" },
+        { id: "xlzHome", title: "Cozy Chic & Homely Elegance", count: "10", key: "home/ho" },
+        { id: "xlzOff", title: "Chic at Work", count: "10", key: "office/of" },
+        { id: "xlzOut", title: "Breeze & Beyond", count: "10", key: "outdoor/ou" },
+        { id: "xlzSee", title: "Seethrough ...", count: "10", key: "seethrough/se" },
+        { id: "xlzSpa", title: "Sultry Spaghetti Straps", count: "10", key: "spaghetti/sp" },
+        { id: "xlzSto", title: "Silken Allure & Enchanting Legs", count: "10", key: "stockings/st" },
+        { id: "xlzWed", title: "Angelically Innocent", count: "10", key: "weddings/we" },
+    ]),
 };
 
 // Helper function to generate subcategory data
@@ -120,121 +158,4 @@ function genSubCat(subBasePath: string, items: { id: string; title: string; coun
 //             { id: "KELESto", title: "Silken Allure & Enchanting Legs", cover: genKeleList("stockings/st", 10)[0], count: "10", path: "abkele/stockings/st" },
 //         ]);
 
-//     } else if (itemid === 'anran') {
-//         setCategories([
-//             { id: "ANRANaf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("anran/af", 20)[0], count: "10", path: "abfresh/anran/af" },
-//             { id: "ANRANClass", title: "Scholarly Chic & Study Glam", cover: genAnranList("classroom/cl", 10)[2], count: "10", path: "abanran/classroom/cl" },
-//             { id: "ANRANHotel", title: "Luxe Escapes & Midnight Whispers", cover: genAnranList("hotel/ho", 10)[1], count: "10", path: "abanran/hotel/ho" },
-//             { id: "ANRANDenim", title: "Casual Chic in Denim", cover: genAnranList("demins/de", 10)[0], count: "10", path: "abanran/demins/de" },
-//             { id: "ANRANOffice", title: "Power & Poise in the Workplace", cover: genAnranList("office/of", 10)[2], count: "10", path: "abanran/office/of" },
-//             { id: "ANRANSto", title: "Silken Allure & Enchanting Legs", cover: genAnranList("stockings/st", 10)[0], count: "10", path: "abanran/stockings/st" },
-//         ]);
 
-
-//     } else if (itemid === 'xlz') {
-//         setCategories([
-//             { id: "XLZxf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("xlz/xf", 20)[0], count: "10", path: "abfresh/xlz/xf" },
-//             { id: "XLZBed", title: "Cozy & Seductive Moments", cover: genXLZList("bedbathsofa/be", 10)[0], count: "10", path: "abxlz/bedbathsofa/be" },
-//             { id: "XLZOffice", title: "Power & Poise in the Workplace", cover: genXLZList("office/of", 10)[2], count: "10", path: "abxlz/office/of" },
-//             { id: "XLZSee", title: "Ethereal Elegance & Sheer Temptation", cover: genXLZList("seethrough/se", 10)[2], count: "10", path: "abxlz/seethrough/se" },
-//             { id: "XLZSpa", title: "Luxe Escapes & Midnight Whispers", cover: genXLZList("spaghetti/sp", 10)[1], count: "10", path: "abxlz/spaghetti/sp" },
-//             { id: "XLZSto", title: "Silken Allure & Enchanting Legs", cover: genXLZList("stockings/st", 10)[0], count: "10", path: "abxlz/stockings/st" },
-//         ]);
-
-
-
-//     } else if (itemid === 'lxl') {
-//         setCategories([
-//             { id: "LXLlf1", title: "Fresh & Trending", cover: genFreshList("lxl/lf", 20)[0], count: "10", path: "abfresh/lxl/lf" },
-//             { id: "LXLBed", title: "Cozy & Seductive Moments", cover: genLXLList("bedbathsofa/be", 10)[0], count: "10", path: "ablxl/bedbathsofa/be" },
-//             { id: "LXLChe", title: "Elegant in Cheongsam", cover: genLXLList("cheongsam/ch", 10)[0], count: "10", path: "ablxl/cheongsam/ch" },
-//             { id: "LXLFish", title: "Night Life", cover: genLXLList("fishdress/fi", 10)[1], count: "10", path: "ablxl/fishdress/fi" },
-//             { id: "LXLOffice", title: "Chic at Work", cover: genLXLList("office/of", 10)[0], count: "10", path: "ablxl/office/of" },
-//             { id: "LXLPencil", title: "Seductive Pencil", cover: genLXLList("pencilskirt/pe", 10)[2], count: "10", path: "ablxl/pencilskirt/pe" },
-//             { id: "LXLSpa", title: "Sultry Spaghetti Straps", cover: genLXLList("spaghetti/sp", 10)[0], count: "10", path: "ablxl/spaghetti/sp" },
-//             { id: "LXLStr", title: "Chic in Motion", cover: genLXLList("strapless/st", 10)[0], count: "10", path: "ablxl/strapless/st" },
-//         ]);
-
-
-
-//     } else if (itemid === 'others') {
-//         setCategories([
-//             { id: "OTHERSof1", title: "Fresh & Trending", cover: genFreshList("others/of", 20)[0], count: "10", path: "abfresh/others/of" },
-//             { id: "OTHERSStu", title: "student w glass", cover: genOthersList("student/stu", 5)[1], count: "10", path: "abothers/student/stu" },
-//             { id: "OTHERSGreen", title: "green", cover: genOthersList("green/green", 5)[2], count: "10", path: "abothers/green/green" },
-//             { id: "OTHERSMid", title: "middle age", cover: genOthersList("middleage/mid", 5)[3], count: "10", path: "abothers/middleage/mid" },
-//         ]);
-
-//     } else if (itemid === 'special') {
-//         setCategories([
-//             { id: "SpecialBack", title: "Elegance from Behind", cover: genImgList("abspecialtaste/back/ba", 10)[0], path: "abspecialtaste/back/ba", count: "10" },
-//             { id: "SpecialFinger", title: "Graceful Fingertips", cover: genImgList("abspecialtaste/finger/fi", 10)[0], path: "abspecialtaste/finger/fi", count: "10" },
-//             { id: "SpecialButt", title: "Curves & Confidence", cover: genImgList("abspecialtaste/butt/bu", 10)[0], path: "abspecialtaste/butt/bu", count: "10" },
-//             { id: "SpecialLeg", title: "Poise in Every Step", cover: genImgList("abspecialtaste/legfeet/le", 10)[0], path: "abspecialtaste/legfeet/le", count: "10" },
-//         ]);
-//     } else if (itemid === 'holiday') {
-//         setCategories([
-//             { id: "HolidayLu", title: "Chinese New Year", cover: genImgList("abholiday/luneryear/lu", 10)[0], count: "30", path: "abholiday/luneryear/lu" },
-//         ]);
-//     } else {
-//         setCategories([
-//             { id: "ELSef1", title: "Amazing Start!", cover: "https://ai8ai.github.io/abcat/default/yc1.jpg" },
-//             { id: "ELSef2", title: "Explore the Beauty", cover: "https://ai8ai.github.io/abcat/default/yc2.jpg" },
-//             { id: "ELSef3", title: "Vibrant Colors", cover: "https://ai8ai.github.io/abcat/default/yc3.jpg" },
-//             { id: "ELSef4", title: "Bold & Confident", cover: "https://ai8ai.github.io/abcat/default/yc4.jpg" },
-//             { id: "ELSef5", title: "Artistic Vision", cover: "https://ai8ai.github.io/abcat/default/yc5.jpg" },
-//             { id: "ELSef6", title: "Nature's Essence", cover: "https://ai8ai.github.io/abcat/default/yc6.jpg" },
-//             { id: "ELSef7", title: "Graceful Elegance", cover: "https://ai8ai.github.io/abcat/default/yc7.jpg" },
-//             { id: "ELSef8", title: "Iconic Moments", cover: "https://ai8ai.github.io/abcat/default/yc8.jpg" }
-//         ]);
-//     }
-//     setLoading(false);
-// }, [itemid]);  // Re-run effect when itemid changes
-
-
-
-
-
-
-// lxl: genSubCat("ablxl", [
-//     { id: "lxlyf1", title: "Daily Fresh & Hot Trends", count: "20", key: "lxl/yf" },
-//     { id: "lxlPure", title: "Angelically Innocent", count: "30", key: "pure/pu" },
-//     { id: "lxlSpa", title: "Sultry Spaghetti Straps", count: "40", key: "spaghetti/sp" },
-//     { id: "lxlChe", title: "Elegant in Cheongsam", count: "50", key: "cheongsam/ch" },
-//     { id: "lxlStr", title: "Bare & Beautiful", count: "40", key: "strapless/st" },
-//     { id: "lxlBed", title: "Cozy & Seductive Moments", count: "30", key: "bedbathsofa/be" },
-//     { id: "lxlSeq", title: "Dazzling in Sequins", count: "40", key: "sequins/se" },
-//     { id: "lxlBlue", title: "Mystic in Blue", count: "50", key: "blue/bl" },
-//     { id: "lxlFlo", title: "Flirty Floral Charms", count: "60", key: "floralskirt/fl" },
-//     { id: "lxlGlass", title: "Sensual in Glasses", count: "30", key: "glass/gl" },
-//     { id: "lxlGreen", title: "Enchanting in Green", count: "60", key: "green/gr" },
-//     { id: "lxlDenim", title: "Casual Chic in Denim", count: "50", key: "demins/de" },
-//     { id: "lxlPink", title: "Pretty in Pink", count: "20", key: "pinkgirl/pi" },
-//     { id: "lxlCos", title: "Fantasy & Cosplay Queens", count: "40", key: "cosplay/co" },
-//     { id: "lxlStunning", title: "Daily Fresh & Hot Trends", count: "10", key: "stunning/st" },
-//     { id: "lxlBed", title: "Cozy & Seductive Moments", count: "10", key: "bbs/be" },
-//     { id: "lxlDeco", title: "Sublime Décolleté", count: "10", key: "decollete/de" },
-//     { id: "lxlFlo", title: "Flirty Floral Charms", count: "10", key: "floral/fl" },
-//     { id: "lxlLace", title: "Timeless Grace in Silk & Lace", count: "10", key: "lace/la" },
-//     { id: "lxlOne", title: "Fantasy & Queens", count: "10", key: "oneshoulder/on" },
-//     { id: "lxlOff", title: "Chic at Work", count: "10", key: "office/of" },
-//     { id: "lxlSpa", title: "Sultry Spaghetti Straps", count: "10", key: "spaghetti/sp" },
-//     { id: "lxlStr", title: "Bare & Beautiful", count: "10", key: "strapless/st" },
-//     { id: "lxlStunning", title: "Daily Fresh & Hot Trends", count: "10", key: "stunning/st" },
-//     { id: "lxlBar", title: "Night Life", count: "10", key: "bar/ba" },
-//     { id: "lxlBed", title: "Cozy & Seductive Moments", count: "10", key: "bbs/be" },
-//     { id: "lxlChe", title: "Elegant in Cheongsam", count: "10", key: "cheongsam/ch" },
-//     { id: "lxlCro", title: "Sassy in Croptops", count: "10", key: "croptop/cr" },
-//     { id: "lxlDeco", title: "Sublime Décolleté", count: "10", key: "decollete/de" },
-//     { id: "lxlFormal", title: "Enchanting in Business", count: "10", key: "formal/fo" },
-//     { id: "lxlHalt", title: "Allure en Halter", count: "10", key: "haltertop/ha" },
-//     { id: "lxlLace", title: "Timeless Grace in Silk & Lace", count: "10", key: "lace/la" },
-//     { id: "lxlNight", title: "Nocturne in New York", count: "10", key: "nightnewyork/ni" },
-//     { id: "lxlOff", title: "Chic at Work", count: "10", key: "office/of" },
-//     { id: "lxlOut", title: "Breeze & Beyond", count: "10", key: "outdoor/ou" },
-//     { id: "lxlPants", title: "Chic in Motion", count: "10", key: "pants/pa" },
-//     { id: "lxlSee", title: "Seethrough ...", count: "10", key: "seethrough/se" },
-//     { id: "lxlSpa", title: "Sultry Spaghetti Straps", count: "40", key: "spaghetti/sp" },
-//     { id: "lxlUni", title: "Mystic in Uniform", count: "10", key: "uniform/un" },
-
-// ]),
