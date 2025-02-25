@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { View, Text, Image, Modal, Animated, Pressable, Alert, TouchableOpacity } from 'react-native';
 
-import styles from '@/config/styles';
+import styles         from '@/config/styles';
 import { genImgList } from '@/utils/genImageList'
 
 export default function SlideshowScreen() {
@@ -11,6 +11,7 @@ export default function SlideshowScreen() {
     const { imgPath, count } = useLocalSearchParams();
 
     const [currentImage, setCurrentImage] = useState(0);
+    const [modalVisible, setModalVisible] = useState(false);
     const [isAutoSlideshow, setIsAutoSlideshow] = useState(false);
     const [intervalTime, setIntervalTime] = useState(2000); // default 2 seconds
     const intervalRef = useRef<number | null>(null);
@@ -51,14 +52,9 @@ export default function SlideshowScreen() {
         };
     }, [parentNavi]);
 
-    const toggleSlideshow = () => {
-        if (isAutoSlideshow) {stopAutoSlideshow();
-        } else {startAutoSlideshow();}
-    };
-
     return (
         <View style={styles.sliderContainer}>
-            <TouchableOpacity onPress={toggleSlideshow} style={{ position: 'absolute', width: '100%', height: '100%' }}>
+            <TouchableOpacity onPress={() => setModalVisible(true)} style={{ position: 'absolute', width: '100%', height: '100%' }}>
                 <Image source={{ uri: images[currentImage] }} style={styles.sliderImage} />
             </TouchableOpacity>
 
@@ -72,6 +68,34 @@ export default function SlideshowScreen() {
                     </TouchableOpacity>
                 </View>
             )}
+
+            <Modal transparent animationType="slide" visible={modalVisible} onRequestClose={() => setModalVisible(false)}>
+                <Pressable style={styles.modalContainer} onPress={() => setModalVisible(false)}>
+                    <View style={styles.modalContent}>
+                        {isAutoSlideshow ? (
+                            <>
+                                <TouchableOpacity style={styles.saveButton} onPress={stopAutoSlideshow}>
+                                    <Text style={styles.buttonText}>⏹️ Switch to Manual Mode</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.saveButton} onPress={() => Alert.prompt('Set Interval (ms)', '', (text) => setIntervalTime(Number(text)))}>
+                                    <Text style={styles.buttonText}>⏳ Set Interval</Text>
+                                </TouchableOpacity>
+                            </>
+                        ) : (
+                            <TouchableOpacity style={styles.saveButton} onPress={() => {
+                                setModalVisible(false);
+                                startAutoSlideshow();
+                            }}>
+                                <Text style={styles.buttonText}>▶️ Start Slideshow</Text>
+                            </TouchableOpacity>
+                        )}
+                        <TouchableOpacity style={styles.savePictureButton} onPress={() => { }}>
+                            <Text style={styles.buttonText}>✅ Save Image</Text>
+                        </TouchableOpacity>
+                    </View>
+                </Pressable>
+            </Modal>
+
         </View>
-    )
-};
+    );
+}
