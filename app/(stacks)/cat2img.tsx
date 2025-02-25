@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { View, Text, Image, Modal, Animated, Pressable, Alert, TouchableOpacity } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from '@/config/styles';
 import { genImgList } from '@/utils/genImageList'
@@ -72,7 +73,7 @@ export default function SlideshowScreen() {
                         zIndex: 10
                     }}
                 >
-                    <Text style={{ color: 'white', fontSize: 20 }}>↓</Text>
+                    <MaterialCommunityIcons name="download" size={24} color="white" />
                 </TouchableOpacity>
             )}
             <TouchableOpacity onPress={toggleSlideshow} style={{ position: 'absolute', width: '100%', height: '100%' }}>
