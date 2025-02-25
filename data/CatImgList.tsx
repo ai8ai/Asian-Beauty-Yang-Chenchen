@@ -68,7 +68,7 @@ export const Cat2Sub2Img: SubCategoryConfig = {
 
     ccc: genSubCat("abccc", [
         { id: "cccStunning", title: "Daily Fresh & Hot Trends", count: "10", key: "stunning/st" },
-        { id: "cccBed", title: "Cozy & Seductive Moments", count: "10", key: "bedbathsofa/be" },
+        { id: "cccBBS", title: "Cozy & Seductive Moments", count: "10", key: "bbs/ba" },
 		{ id: "cccBri", title: "Briliant ...", count: "10", key: "briliant/br" },
 		{ id: "cccSexy", title: "Sultry", count: "10", key: "sexy/se" },
         { id: "cccStr", title: "Bare & Beautiful", count: "10", key: "strapless/st" },

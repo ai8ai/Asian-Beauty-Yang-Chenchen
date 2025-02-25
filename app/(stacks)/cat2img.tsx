@@ -1,6 +1,6 @@
-import { View, Text, Image, Modal, Animated, Pressable, Alert, TouchableOpacity } from 'react-native';
+import { View, Text, Image, Animated, Alert, TouchableOpacity } from 'react-native';
 import { ToastAndroid, Platform } from 'react-native';
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import { useLocalSearchParams, useNavigation } from 'expo-router';
 import * as FileSystem from 'expo-file-system';
