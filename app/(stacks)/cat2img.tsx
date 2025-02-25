@@ -27,7 +27,7 @@ export default function SlideshowScreen() {
     // manual
     const goToNextImage = () => { setCurrentImage((prevIndex) => (prevIndex + 1) % images.length); };
     const goToPrevImage = () => { setCurrentImage((prevIndex) => (prevIndex - 1 + images.length) % images.length); };
-    const handleSwipeLeft = () => { goToNextImage(); };
+    const handleSwipeLeft = () => { console.log(images[currentImage]);goToNextImage(); };
     const handleSwipeRight = () => { console.log(images[currentImage]); goToPrevImage(); };
 
     // auto
