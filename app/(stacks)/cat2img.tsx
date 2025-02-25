@@ -1,6 +1,11 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { useLocalSearchParams, useNavigation } from 'expo-router';
 import { View, Text, Image, Modal, Animated, Pressable, Alert, TouchableOpacity } from 'react-native';
+import { ToastAndroid, Platform } from 'react-native';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+
+import { useLocalSearchParams, useNavigation } from 'expo-router';
+import * as FileSystem from 'expo-file-system';
+import * as MediaLibrary from 'expo-media-library';
+
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import styles from '@/config/styles';
@@ -14,6 +19,7 @@ export default function SlideshowScreen() {
     const [currentImage, setCurrentImage] = useState(0);
     const [isAutoSlideshow, setIsAutoSlideshow] = useState(false);
     const [intervalTime, setIntervalTime] = useState(2000); // default 2 seconds
+    const [hasPermission, setHasPermission] = useState(false);
     const intervalRef = useRef<number | null>(null);
 
     const images = genImgList(imgPath as string, Number(count));
@@ -40,7 +46,6 @@ export default function SlideshowScreen() {
         setIsAutoSlideshow(false);
     };
 
-
     useEffect(() => {
         if (parentNavi) {
             parentNavi.setOptions({ headerShown: false }); // Hide Drawer header
@@ -58,11 +63,51 @@ export default function SlideshowScreen() {
         } else { startAutoSlideshow(); }
     };
 
+    const showToast = (message: string) => {
+        if (Platform.OS === 'android') {
+            ToastAndroid.show(message, ToastAndroid.SHORT);
+        } else {
+            Alert.alert("Notification", message);
+        }
+    };
+
+    useEffect(() => {
+        // Request permission to save files
+        (async () => {
+            const { status } = await MediaLibrary.requestPermissionsAsync();
+            setHasPermission(status === 'granted');
+        })();
+    }, []);
+
+    const downloadImage = async () => {
+        if (!hasPermission) {
+            showToast("Please grant media access to save images.");
+            return;
+        }
+
+        try {
+            const imageUrl = images[currentImage];
+            const fileName = imageUrl.split('/').pop(); // Get the file name from URL
+            const fileUri = `${FileSystem.documentDirectory}${fileName}`;
+
+            // Download the image
+            const { uri } = await FileSystem.downloadAsync(imageUrl, fileUri);
+            const asset = await MediaLibrary.createAssetAsync(uri);
+            await MediaLibrary.createAlbumAsync("Downloaded Images", asset, false);
+
+            showToast("Download complete! Image saved.");
+        } catch (error) {
+            console.error("Download Error:", error);
+            showToast("Download failed. Try again.");
+        }
+    };
+
+
     return (
         <View style={styles.sliderContainer}>
             {!isAutoSlideshow && (
                 <TouchableOpacity
-                    onPress={() => Alert.alert("Download", "Download feature coming soon!")}
+                    onPress={downloadImage}
                     style={{
                         position: 'absolute',
                         top: 20,
