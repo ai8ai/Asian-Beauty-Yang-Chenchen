@@ -18,7 +18,7 @@ export default function SlideshowScreen() {
 
     const [currentImage, setCurrentImage] = useState(0);
     const [isAutoSlideshow, setIsAutoSlideshow] = useState(false);
-    const [intervalTime, setIntervalTime] = useState(2000); // default 2 seconds
+    const [intervalTime, setIntervalTime] = useState(3000); // default 2 seconds
     const [hasPermission, setHasPermission] = useState(false);
     const intervalRef = useRef<number | null>(null);
 
@@ -62,22 +62,25 @@ export default function SlideshowScreen() {
 
     const toggleSlideshow = () => {
         if (isAutoSlideshow) {
+            // Stop autoplay immediately
             stopAutoSlideshow();
+
+            // Restore image size smoothly
             Animated.timing(scaleAnim, {
-                toValue: 1, // Restore original size
+                toValue: 1,
                 duration: 300,
                 useNativeDriver: true
             }).start();
         } else {
-            // Shrink first, then start autoplay
+            // Shrink before starting autoplay
             Animated.timing(scaleAnim, {
-                toValue: 0.2, // Shrink effect
-                duration: 3000,
+                toValue: 0.3,
+                duration: 2500,
                 useNativeDriver: true
             }).start(() => {
-                startAutoSlideshow();
+                startAutoSlideshow(); // Start autoplay after animation
                 Animated.timing(scaleAnim, {
-                    toValue: 1, // Restore size after start
+                    toValue: 1, // Restore original size
                     duration: 300,
                     useNativeDriver: true
                 }).start();
@@ -128,18 +131,7 @@ export default function SlideshowScreen() {
     return (
         <View style={styles.sliderContainer}>
             {!isAutoSlideshow && (
-                <TouchableOpacity
-                    onPress={downloadImage}
-                    style={{
-                        position: 'absolute',
-                        top: 20,
-                        right: 20,
-                        backgroundColor: 'rgba(0, 0, 0, 0.3)',
-                        padding: 10,
-                        borderRadius: 20,
-                        zIndex: 10
-                    }}
-                >
+                <TouchableOpacity onPress={downloadImage} style={{ position: 'absolute', top: 20, right: 20, backgroundColor: 'rgba(0, 0, 0, 0.3)', padding: 10, borderRadius: 20, zIndex: 10 }}                >
                     <MaterialCommunityIcons name="download" size={24} color="white" />
                 </TouchableOpacity>
             )}
