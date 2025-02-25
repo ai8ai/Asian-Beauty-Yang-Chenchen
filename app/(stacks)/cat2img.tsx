@@ -52,12 +52,29 @@ export default function SlideshowScreen() {
     }, [parentNavi]);
 
     const toggleSlideshow = () => {
-        if (isAutoSlideshow) {stopAutoSlideshow();
-        } else {startAutoSlideshow();}
+        if (isAutoSlideshow) {
+            stopAutoSlideshow();
+        } else { startAutoSlideshow(); }
     };
 
     return (
         <View style={styles.sliderContainer}>
+            {!isAutoSlideshow && (
+                <TouchableOpacity
+                    onPress={() => Alert.alert("Download", "Download feature coming soon!")}
+                    style={{
+                        position: 'absolute',
+                        top: 20,
+                        right: 20,
+                        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                        padding: 10,
+                        borderRadius: 20,
+                        zIndex: 10
+                    }}
+                >
+                    <Text style={{ color: 'white', fontSize: 20 }}>↓</Text>
+                </TouchableOpacity>
+            )}
             <TouchableOpacity onPress={toggleSlideshow} style={{ position: 'absolute', width: '100%', height: '100%' }}>
                 <Image source={{ uri: images[currentImage] }} style={styles.sliderImage} />
             </TouchableOpacity>
