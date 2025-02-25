@@ -31,10 +31,35 @@ export default function SlideshowScreen() {
     const handleSwipeRight = () => { console.log(images[currentImage]); goToPrevImage(); };
 
     // auto
+    const scaleAnim = useRef(new Animated.Value(1)).current;
+    
+    const goToNextImageWithEffect = () => {
+        // Shrink the image first
+        Animated.timing(scaleAnim, {
+            toValue: 0.7, // Shrink the current image
+            duration: 300, // Shrink speed
+            useNativeDriver: true,
+        }).start(() => {
+            // After shrinking, switch to the next image
+            setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+    
+            // Restore the image to its original size
+            Animated.timing(scaleAnim, {
+                toValue: 1, // Restore to original size
+                duration: 300, // Grow back to normal size
+                useNativeDriver: true,
+            }).start(() => {
+                // Start auto slideshow after the animation completes
+                startAutoSlideshow(); 
+            });
+        });
+    };
+
+    
     const startAutoSlideshow = () => {
         setIsAutoSlideshow(true);
         intervalRef.current = window.setInterval(() => {
-            goToNextImage();
+            goToNextImageWithEffect();
         }, intervalTime);
     };
 
@@ -57,32 +82,10 @@ export default function SlideshowScreen() {
         };
     }, [parentNavi]);
 
-    // toggle
-    const scaleAnim = useRef(new Animated.Value(1)).current;
-
     const toggleSlideshow = () => {
         if (isAutoSlideshow) {
             stopAutoSlideshow();
-            Animated.timing(scaleAnim, {
-                toValue: 1, // Restore original size
-                duration: 300,
-                useNativeDriver: true
-            }).start();
-        } else {
-            // Shrink first, then start autoplay
-            Animated.timing(scaleAnim, {
-                toValue: 0.2, // Shrink effect
-                duration: 3000,
-                useNativeDriver: true
-            }).start(() => {
-                startAutoSlideshow();
-                Animated.timing(scaleAnim, {
-                    toValue: 1, // Restore size after start
-                    duration: 300,
-                    useNativeDriver: true
-                }).start();
-            });
-        }
+        } else { startAutoSlideshow(); }
     };
 
     const showToast = (message: string) => {
@@ -144,9 +147,11 @@ export default function SlideshowScreen() {
                 </TouchableOpacity>
             )}
             <TouchableOpacity onPress={toggleSlideshow} style={{ position: 'absolute', width: '100%', height: '100%' }}>
-                <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-                    <Image source={{ uri: images[currentImage] }} style={styles.sliderImage} />
-                </Animated.View>
+                {/* <Image source={{ uri: images[currentImage] }} style={styles.sliderImage} /> */}
+                <Animated.Image
+                    source={{ uri: images[currentImage] }}
+                    style={[styles.sliderImage, { transform: [{ scale: scaleAnim }] }]}
+                />
             </TouchableOpacity>
 
             {!isAutoSlideshow && (
