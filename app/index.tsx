@@ -2,7 +2,7 @@
 import { router } from 'expo-router';
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 
-import { CatInterface } from '@/config/tstype';
+import { CatInterface } from '@/config/type';
 import styles from '@/config/styles';
 import { HomeList } from '@/data/CatImgList';
 

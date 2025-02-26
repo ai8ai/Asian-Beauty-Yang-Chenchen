@@ -3,7 +3,7 @@ import { View, FlatList, Image, Text, TouchableOpacity, ActivityIndicator } from
 import { router, useLocalSearchParams } from 'expo-router';
 import styles from '@/config/styles';
 
-import { CatInterface } from '@/config/tstype';
+import { CatInterface } from '@/config/type';
 import { Cat2Sub2Img } from '@/data/CatImgList';
 
 const CategoryScreen: React.FC = () => {

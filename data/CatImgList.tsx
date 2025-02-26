@@ -1,6 +1,16 @@
 // Category
-import { CatInterface, SubCategoryConfig } from '@/config/tstype';
+import { CatInterface, SubCategoryConfig } from '@/config/type';
 import { genImgList } from '@/utils/genImageList'
+
+function genSubCat(subBasePath: string, items: { id: string; title: string; count: string; key: string }[]) {
+    return items.map(({ id, title, count, key }) => ({
+        id,
+        title,
+        count,
+        cover: genImgList(`${subBasePath}/${key}`, 10)[0],
+        path: `${subBasePath}/${key}`,
+    }));
+}
 
 export const HomeList: CatInterface[] = [
     { id: "ycc", title: "Yang Chenchen \n Yome Sugar 杨晨晨", shorttitle: "Yang Chenchen", cover: genImgList("abcat/ycc/yc", 5)[0] },
@@ -15,6 +25,7 @@ export const HomeList: CatInterface[] = [
     { id: "hol", title: "Holidays", shorttitle: "Holidays", cover: genImgList("abcat/holiday/hc", 5)[0] },
     { id: "spe", title: "Special Taste", shorttitle: "Special Taste", cover: genImgList("abcat/special/sc", 5)[0] },
     { id: "sce", title: "Asian Scene", shorttitle: "Asican Scene", cover: genImgList("aicat/scene/sc", 5)[0] },
+    { id: "sur", title: "Girl Next Door \n shirouto, しろうと", shorttitle: "Girl Next Door", cover: genImgList("abcat/suren/sc", 5)[0] },
 ];
 
 export const Cat2Sub2Img: SubCategoryConfig = {
@@ -111,9 +122,10 @@ export const Cat2Sub2Img: SubCategoryConfig = {
         { id: "anrStunning", title: "Daily Fresh & Hot Trends", count: "10", key: "stunning/st" },
         { id: "anrSto", title: "Silken Allure & Enchanting Legs", count: "10", key: "stockings/st" },
         { id: "anrOff", title: "Chic at Work", count: "10", key: "office/of" },
-        { id: "anrHot", title: "Luxe Escapes & Midnight Whispers", count: "10", key: "anr/hot" },
+        { id: "anrHotel", title: "Luxe Escapes & Midnight Whispers", count: "10", key: "hotel/ho" },
         { id: "anrDenim", title: "Casual Chic in Denim", count: "50", key: "demins/de" },
         { id: "anrClass", title: "Enchanting in Class", count: "10", key: "classroom/cl" },
+        { id: "anr8k", title: "8K", count: "4", key: "k8/k8" },
     ]),
 
     sce: genSubCat("isce", [
@@ -132,30 +144,19 @@ export const Cat2Sub2Img: SubCategoryConfig = {
         { id: "xlzSto", title: "Silken Allure & Enchanting Legs", count: "10", key: "stockings/st" },
         { id: "xlzWed", title: "Angelically Innocent", count: "10", key: "weddings/we" },
     ]),
+
+    kel: genSubCat("abkele", [
+        { id: "kelBed", title: "Cozy & Seductive Moments", count: "40", key: "bbs/ba" },
+        { id: "kelBlackSilk", title: "Timeless Grace in Silk & Lace", count: "20", key: "blacksilk/bl" },
+        { id: "kelChe", title: "Elegant in Cheongsam", count: "30", key: "cheongsam/ch" },
+        { id: "kelFlo", title: "Flirty Floral Charms", count: "20", key: "floral/fl" },
+        { id: "kelHome", title: "Cozy Chic & Homely Elegance", count: "30", key: "home/ho" },
+		{ id: "xlzLeg", title: "Bare & Beautiful Legs", count: "20", key: "leg/le" },
+        { id: "kelOff", title: "Chic at Work", count: "30", key: "office/of" },
+        { id: "kelSofa", title: "Sofa Soft", count: "40", key: "sofa/so" },
+        { id: "kelSpa", title: "Sultry Spaghetti Straps", count: "10", key: "spegatti/sp" },
+        { id: "kelSto", title: "Silken Allure & Enchanting Legs", count: "20", key: "stockings/st" },
+        { id: "kelStunning", title: "Daily Fresh & Hot Trends", count: "10", key: "stunning/st" },
+    ]),
+    
 };
-
-// Helper function to generate subcategory data
-function genSubCat(subBasePath: string, items: { id: string; title: string; count: string; key: string }[]) {
-    return items.map(({ id, title, count, key }) => ({
-        id,
-        title,
-        count,
-        cover: genImgList(`${subBasePath}/${key}`, 10)[0],
-        path: `${subBasePath}/${key}`,
-    }));
-}
-
-
-//     } else if (itemid === 'kele') {
-//         setCategories([
-//             { id: "KELEkf1", title: "Daily Fresh & Hot Trends", cover: genFreshList("kele/kf", 20)[0], count: "10", path: "abfresh/kele/kf" },
-//             { id: "KELEBat", title: "Dreamy Comfort & Sensual Retreats", cover: genKeleList("bathbedsofa/ba", 10)[0], count: "10", path: "abkele/bathbedsofa/ba" },
-//             { id: "KELEChe", title: "Timeless Grace in Silk & Lace", cover: genKeleList("cheongsam/ch", 10)[2], count: "10", path: "abkele/cheongsam/ch" },
-//             { id: "KELEFlo", title: "Whimsical Blooms & Petal Charms", cover: genKeleList("floral/fl", 10)[1], count: "10", path: "abkele/floral/fl" },
-//             { id: "KELEHome", title: "Cozy Chic & Homely Elegance", cover: genKeleList("home/ho", 10)[0], count: "10", path: "abkele/home/ho" },
-//             { id: "KELEOffice", title: "Power & Poise in the Workplace", cover: genKeleList("office/of", 10)[2], count: "10", path: "abkele/office/of" },
-//             { id: "KELESofa", title: "Lounge in Luxe & Leisure", cover: genKeleList("sofa/so", 10)[1], count: "10", path: "abkele/sofa/so" },
-//             { id: "KELESto", title: "Silken Allure & Enchanting Legs", cover: genKeleList("stockings/st", 10)[0], count: "10", path: "abkele/stockings/st" },
-//         ]);
-
-
