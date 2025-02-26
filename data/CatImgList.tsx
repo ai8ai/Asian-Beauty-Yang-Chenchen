@@ -158,5 +158,19 @@ export const Cat2Sub2Img: SubCategoryConfig = {
         { id: "kelSto", title: "Silken Allure & Enchanting Legs", count: "20", key: "stockings/st" },
         { id: "kelStunning", title: "Daily Fresh & Hot Trends", count: "10", key: "stunning/st" },
     ]),
+
     
+    sur: genSubCat("absuren", [
+        { id: "surChu", title: "Fantasy & Queens", count: "20", key: "chubby/ch" },
+        { id: "surDeco", title: "Sublime Décolleté", count: "6", key: "decollete/de" },
+        { id: "surDog", title: "Friend Forever", count: "50", key: "dog/do" },
+        { id: "surDot", title: "Mystic in Dot", count: "50", key: "dot/do" },
+        { id: "surFace", title: "Enchanting in Face", count: "60", key: "face/fa" },
+        { id: "surFlo", title: "Flirty Floral Charms", count: "60", key: "floralskirt/fl" },
+        { id: "surOff", title: "Chic at Work", count: "10", key: "office/of" },
+        { id: "surPure", title: "Angelically Innocent", count: "30", key: "pure/pu" },
+        { id: "surSpa", title: "Sultry Spaghetti Straps", count: "10", key: "spaghetti/sp" },
+		{ id: "surSee", title: "Seethrough ...", count: "10", key: "seethrough/se" },
+
+    ]),
 };
